@@ -1,0 +1,7 @@
+{
+  "name": "pen-pencil-replicate",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
