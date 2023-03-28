@@ -1,0 +1,37 @@
+<svg height="135.04" viewBox="0 0 130.768 135.04" width="130.768"
+     xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <filter filterUnits="userSpaceOnUse" height="135.04" id="Path_1326" width="130.768" x="0" y="0">
+            <feOffset dy="-10" input="SourceAlpha"/>
+            <feGaussianBlur result="blur" stdDeviation="14"/>
+            <feFlood flood-color="#f9d90a" flood-opacity="0.502"/>
+            <feComposite in2="blur" operator="in"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+    </defs>
+    <g id="daily_updates" transform="translate(41.924 52.001)">
+        <g filter="url(#Path_1326)" transform="matrix(1, 0, 0, 1, -41.92, -52)">
+            <path d="M36.214,51.04H10.7V48.914A12.966,12.966,0,0,0,6.812,39.8a23.384,23.384,0,1,1,33.162.134,12.6,12.6,0,0,0-3.761,8.976Zm0,0"
+                  data-name="Path 1326"
+                  fill="#ffcb5a"
+                  id="Path_1326-2" transform="translate(41.92 52)"/>
+        </g>
+        <path d="M82.2,416.156h21.258a2.126,2.126,0,1,1,0,4.252H82.2a2.126,2.126,0,1,1,0-4.252Zm0,0"
+              data-name="Path 1327"
+              fill="#62808c"
+              id="Path_1327" transform="translate(-69.366 -360.865)"/>
+        <path d="M114.2,480.156h12.755a2.126,2.126,0,1,1,0,4.252H114.2a2.126,2.126,0,1,1,0-4.252Zm0,0"
+              data-name="Path 1328"
+              fill="#62808c"
+              id="Path_1328" transform="translate(-97.114 -416.361)"/>
+        <g data-name="Group 737" id="Group_737" transform="translate(8.579 21.278)">
+            <path d="M64.07,160.156h4.252v4.252H64.07Zm0,0" data-name="Path 1329" fill="#fff"
+                  id="Path_1329" transform="translate(-64.07 -160.156)"/>
+            <path d="M128.07,164.408h4.252v25.51h4.252v-25.51h4.252v-4.252H128.07Zm0,0" data-name="Path 1330"
+                  fill="#fff"
+                  id="Path_1330" transform="translate(-119.567 -160.156)"/>
+            <path d="M256.07,160.156h4.252v4.252H256.07Zm0,0" data-name="Path 1331" fill="#fff"
+                  id="Path_1331" transform="translate(-230.56 -160.156)"/>
+        </g>
+    </g>
+</svg>

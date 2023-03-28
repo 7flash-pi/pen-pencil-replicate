@@ -1,0 +1,20 @@
+<svg height="35.41" viewBox="0 0 33.03 35.41" width="33.03" xmlns="http://www.w3.org/2000/svg">
+    <g id="flashcard" transform="translate(0 -73.846)">
+        <g data-name="Group 743" id="Group_743" transform="translate(0 73.846)">
+            <g data-name="Group 742" id="Group_742">
+                <path d="M30.807,73.846H2.223C1,73.846,0,75.349,0,77.2v28.711c0,1.847,1,3.35,2.223,3.35H30.807c1.226,0,2.223-1.5,2.223-3.35V77.2C33.03,75.349,32.033,73.846,30.807,73.846Zm.318,32.06c0,.264-.142.479-.318.479H2.223c-.175,0-.318-.215-.318-.479V91.072H31.124Zm0-17.7H1.906V83.416H31.124V88.2Zm0-7.656H1.906V77.2c0-.264.142-.479.318-.479H30.807c.175,0,.318.215.318.479v3.35Z"
+                      data-name="Path 1348"
+                      fill="#b9b9b9"
+                      id="Path_1348" transform="translate(0 -73.846)"/>
+            </g>
+        </g>
+        <g data-name="Group 745" id="Group_745" transform="translate(4.428 102.08)">
+            <g data-name="Group 744" id="Group_744">
+                <path d="M347.677,339.692h-6.723a1.209,1.209,0,1,0,0,2.415h6.723a1.209,1.209,0,1,0,0-2.415Z"
+                      data-name="Path 1349"
+                      fill="#b9b9b9"
+                      id="Path_1349" transform="translate(-339.693 -339.692)"/>
+            </g>
+        </g>
+    </g>
+</svg>

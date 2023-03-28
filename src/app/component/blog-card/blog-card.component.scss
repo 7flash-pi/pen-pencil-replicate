@@ -1,0 +1,37 @@
+.lcv-text{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  margin-top: 30px;
+  align-items: center;
+}
+ion-col{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  ion-img{
+    width: 30px;
+    height: 30px;
+
+  }
+}
+
+.mid-img{
+ border-left: 1px solid #ddd;
+ border-right: 1px solid #ddd;
+}
+
+.lvc-box{
+  border-top: 1px solid #ddd;
+  --background:#f2f2f2;
+
+}
+
+.criclespan{
+
+  height: 8px;
+  width: 8px;
+  background-color:#D5D9E0;
+  border-radius: 50%;
+}

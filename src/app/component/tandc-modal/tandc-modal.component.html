@@ -1,0 +1,12 @@
+<div class="modal-content modal-wrapper">
+ <ion-title style =" --color:#D04043; font-size: 20px; font-weight: 600;" class="ion-margin-top">Terms & Conditons</ion-title>
+ <ion-item lines="none" class="ion-margin-vertical">
+ <ion-checkbox slot="start" (ionChange)=" checked = !checked"></ion-checkbox>
+ <ion-text class="termClabel" style="--color:#222; font-size: 15px; font-weight: 400;"> All rights are reserved. Any content uploaded in this app is under the copyright of Nursing Next Live. Sharing the content via any means will bring you to be treated as a violater of the Copyright act.
+  Any person involved directly or indrectly will be punishable
+   and fined as per the copyright rules.</ion-text>
+  </ion-item>
+
+  <ion-button shape="squa" [disabled]="!checked " (click)="close()" class="tandc-btn" size="6"> Next </ion-button>
+
+</div>

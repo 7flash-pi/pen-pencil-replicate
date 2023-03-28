@@ -24,3 +24,46 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+.login-content{
+margin: 0 2em;
+display: flex;
+text-align: center;
+flex-direction: column;
+
+ion-text{
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  text-overflow: initial;
+  color: var(--);
+}
+ion-label{
+  font-size: 10px;
+  font-weight: 500;
+}
+ion-button{
+  width: 50%;
+  align-items: center;
+  margin: 0 auto;
+  --background: #E72229;
+}
+}
+
+.sub-title{
+  font-size: 12px;
+  font-weight: 600;
+  --color:#333;
+}
+
+.tandc-modal-Class{
+  .modal-wrapper{
+    height: 40%;
+    width: 90%;
+    border-radius: 15px;
+    ---background:#fff;
+    margin: auto auto ;
+
+  }
+
+}

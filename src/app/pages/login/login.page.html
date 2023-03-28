@@ -1,0 +1,44 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content  >
+  <div class="login-content">
+    <ion-img src="assets/auth/login_top.png" class="ion-margin-horizontal ion-padding"></ion-img>
+    <ion-text class="ion-margin-top" style="color:#E72229;"> Welcome to Nursing Next Live!</ion-text>
+    <ion-label>Login to your exisitng account of NN Live</ion-label>
+
+    <section class="ion-margin-top">
+      <form >
+        <ion-item class="ion-margin-top box" lines="none" >
+          <ion-input type="tel" placeholder="Phone Number" required [(ngModel)]="phoneNumber" name="phoneNumber"></ion-input>
+        </ion-item>
+
+        <ion-item class="ion-margin-top box" lines="none">
+          <ion-input [type]=" showpass ? 'text' :'password' "  placeholder="Password" required [(ngModel)]="password" name="password"></ion-input>
+        </ion-item>
+      </form>
+
+
+    </section>
+
+    <ion-item lines="none" class="ion-margin-start ion-margin-top" style="width:auto">
+      <ion-checkbox slot="start" (ionchange) =" showpass=!showpass" [checked]=" showpass===true "></ion-checkbox>
+      <ion-label >Show Password</ion-label>
+    </ion-item >
+
+    <ion-button shape="round" color="danger" class="login-btn" (click)="gotoTandC()" > Login </ion-button>
+
+    <ion-text (click)="gotosignup()" class="ion-margin-top">Don't have an account?<span style="color:#E72229">Signup</span></ion-text>
+
+
+
+  </div>
+
+
+
+
+
+</ion-content>

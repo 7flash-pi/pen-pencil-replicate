@@ -1,0 +1,28 @@
+<svg height="99" viewBox="0 0 99 99" width="99"
+     xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <filter filterUnits="userSpaceOnUse" height="99" id="Ellipse_64" width="99" x="0" y="0">
+            <feOffset dy="5" input="SourceAlpha"/>
+            <feGaussianBlur result="blur" stdDeviation="5.5"/>
+            <feFlood flood-color="#929292" flood-opacity="0.161"/>
+            <feComposite in2="blur" operator="in"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+    </defs>
+    <g id="question_of_day" transform="translate(-76.5 -621.5)">
+        <g filter="url(#Ellipse_64)" transform="matrix(1, 0, 0, 1, 76.5, 621.5)">
+            <circle cx="33" cy="33" data-name="Ellipse 64" fill="#fff" id="Ellipse_64-2" r="33"
+                    transform="translate(16.5 11.5)"/>
+        </g>
+        <g id="communications" transform="translate(106.983 646.983)">
+            <path d="M221.955,209.661a12.332,12.332,0,0,0-6.763-10.981,16.77,16.77,0,0,1-16.512,16.512,12.3,12.3,0,0,0,17.237,5.054L221.9,221.9l-1.655-5.985a12.25,12.25,0,0,0,1.709-6.256Zm0,0"
+                  data-name="Path 1334"
+                  fill="#f54a50"
+                  id="Path_1334" transform="translate(-183.921 -183.921)"/>
+            <path d="M29.046,14.523A14.523,14.523,0,1,0,2.014,21.9L.053,28.992l7.088-1.96a14.526,14.526,0,0,0,21.9-12.509Zm-16.751-3.38H10.066a4.457,4.457,0,1,1,7.465,3.289l-1.893,1.733V17.9H13.409V15.184l2.617-2.4a2.206,2.206,0,0,0,.725-1.645,2.229,2.229,0,0,0-4.457,0Zm1.114,8.989h2.229V22.36H13.409Zm0,0"
+                  data-name="Path 1335"
+                  fill="#f54a50"
+                  id="Path_1335"/>
+        </g>
+    </g>
+</svg>

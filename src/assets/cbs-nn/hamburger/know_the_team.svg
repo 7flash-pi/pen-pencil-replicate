@@ -1,0 +1,26 @@
+<svg height="33" viewBox="0 0 33 33" width="33"
+     xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient gradientUnits="objectBoundingBox" id="linear-gradient" x2="1" y1="0.5" y2="0.5">
+            <stop offset="0" stop-color="#e63946"/>
+            <stop offset="1" stop-color="#ff6b7a"/>
+        </linearGradient>
+    </defs>
+    <g id="know_the_team" transform="translate(0 -0.001)">
+        <g data-name="Group 219" id="Group_219">
+            <g data-name="Group 218" id="Group_218">
+                <path d="M4.27,24.46a4.27,4.27,0,1,0,4.27,4.271A4.275,4.275,0,0,0,4.27,24.46Z" data-name="Path 226"
+                      fill="url(#linear-gradient)"
+                      id="Path_226"/>
+                <path d="M.71,12.294a.676.676,0,0,0-.7.676v5.48a.676.676,0,0,0,.645.675A13.8,13.8,0,0,1,13.878,32.346a.676.676,0,0,0,.675.645h5.48a.675.675,0,0,0,.676-.7,20.623,20.623,0,0,0-6.061-13.937A20.623,20.623,0,0,0,.71,12.294Z"
+                      data-name="Path 227"
+                      fill="url(#linear-gradient)"
+                      id="Path_227"/>
+                <path d="M23.332,9.67A32.825,32.825,0,0,0,.7,0,.652.652,0,0,0,.215.194a.676.676,0,0,0-.2.483V6.153a.676.676,0,0,0,.659.676,26.471,26.471,0,0,1,25.5,25.5.675.675,0,0,0,.675.659h5.476A.676.676,0,0,0,33,32.3,32.828,32.828,0,0,0,23.332,9.67Z"
+                      data-name="Path 228"
+                      fill="url(#linear-gradient)"
+                      id="Path_228"/>
+            </g>
+        </g>
+    </g>
+</svg>

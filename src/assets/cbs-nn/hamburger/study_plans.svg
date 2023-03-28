@@ -1,0 +1,39 @@
+<svg height="57" viewBox="0 0 56 57" width="56"
+     xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient gradientUnits="objectBoundingBox" id="linear-gradient" x2="1" y1="0.5" y2="0.5">
+            <stop offset="0" stop-color="#e63946"/>
+            <stop offset="1" stop-color="#ff6b7a"/>
+        </linearGradient>
+    </defs>
+    <g id="Light-Lamp-Idea-Blub-Creative" transform="translate(-4 -2)">
+        <path d="M26.55,29.38a1,1,0,0,1,.45.83v2.61l10-1.67v-.94a1,1,0,0,1,.45-.83,10,10,0,1,0-10.9,0Zm.743-7.087a1,1,0,0,1,1.414,0l2.236,2.236,5.3-6.18a1,1,0,0,1,1.518,1.3l-6,7A1,1,0,0,1,31.04,27H31a1,1,0,0,1-.707-.293l-3-3A1,1,0,0,1,27.293,22.293Z"
+              data-name="Path 1759"
+              fill="url(#linear-gradient)"
+              id="Path_1759"/>
+        <path d="M29,45h6a1,1,0,0,0,1-1V41.347l2.164-.361a1,1,0,1,0-.328-1.972l-12,2A1,1,0,0,0,26,43a.928.928,0,0,0,.165-.014L28,42.68V44a1,1,0,0,0,1,1Z"
+              data-name="Path 1760"
+              fill="url(#linear-gradient)"
+              id="Path_1760"/>
+        <path d="M9,52H60V47H10a6,6,0,0,0,0,12H60V54H9a1,1,0,0,1,0-2Z" data-name="Path 1761"
+              fill="url(#linear-gradient)"
+              id="Path_1761"/>
+        <path d="M32,7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V6A1,1,0,0,0,32,7Z" data-name="Path 1762"
+              fill="url(#linear-gradient)"
+              id="Path_1762"/>
+        <path d="M14,21h3a1,1,0,0,0,0-2H14a1,1,0,0,0,0,2Z" data-name="Path 1763" fill="url(#linear-gradient)"
+              id="Path_1763"/>
+        <path d="M47,21h3a1,1,0,0,0,0-2H47a1,1,0,0,0,0,2Z" data-name="Path 1764" fill="url(#linear-gradient)"
+              id="Path_1764"/>
+        <path d="M20.293,10.707a1,1,0,1,0,1.414-1.414l-2-2a1,1,0,1,0-1.414,1.414Z" data-name="Path 1765"
+              fill="url(#linear-gradient)"
+              id="Path_1765"/>
+        <path d="M43,11a1,1,0,0,0,.707-.293l2-2a1,1,0,1,0-1.414-1.414l-2,2A1,1,0,0,0,43,11Z" data-name="Path 1766"
+              fill="url(#linear-gradient)"
+              id="Path_1766"/>
+        <path d="M37.836,35.014l-12,2A1,1,0,0,0,26,39a.928.928,0,0,0,.165-.014l12-2a1,1,0,1,0-.328-1.972Z"
+              data-name="Path 1767"
+              fill="url(#linear-gradient)"
+              id="Path_1767"/>
+    </g>
+</svg>

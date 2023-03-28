@@ -3,7 +3,12 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  SOCKET_URL: 'https://socket-prod.penpencil.xyz/',
+  RAZORPAY_KEY: 'rzp_live_XUOCWdp3R9tsTZ',
+  BASE_URL_V1: 'https://api.penpencil.co/v1/',
+  BASE_URL_V2: 'https://api.penpencil.co/v2/',
+  BASE_URL_V3: 'https://api.penpencil.co/v3/',
 };
 
 /*

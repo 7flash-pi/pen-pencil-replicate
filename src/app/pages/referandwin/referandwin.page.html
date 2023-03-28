@@ -1,0 +1,47 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <app-back-button [btnIcon]="btnIcon" [btnText]="btnText" [defaultHref]="defaultHref" class="refer-backbtn"></app-back-button>
+   <!-- <ion-buttons slot="start">
+      <ion-back-button icon="arrow-back-outline" color="dark"  text="Refer & Win" defaultHref="home" class="referback-btn"></ion-back-button>
+    </ion-buttons> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-margin-top  ion-margin-start ">
+
+  <div class="referandwin-Content full-height">
+    <ion-img src="assets/cbs-nn/refer_earn/refer_earn.svg" ></ion-img>
+
+        <ion-item lines="none">
+          <ion-input type="number" [(ngModel)]="referNumber" name="referNumber" class="refInput"></ion-input>
+          <ion-button (click)="copyReferalCode()" class='ref-btn' >COPY CODE</ion-button>
+        </ion-item>
+
+          <p style="text-transform: uppercase; font-size: 18px; --color:#4b4b4b;">Share Your Referal code</p>
+
+
+          <ion-text> Social Media  <span>
+            <p style="text-transform: capitalize;">Share on facebook and Whatsapp</p>
+          </span></ion-text>
+
+
+          <ion-button color="success" style="text-transform: uppercase;">
+          <ion-icon name="logo-whatsapp"></ion-icon>
+            Share On Whatsapp
+          </ion-button>
+          <ion-button style="--background:#3A5998; text-transform: uppercase;">
+            <ion-icon name="logo-facebook"></ion-icon>
+             Share on  Facebook
+            </ion-button>
+
+
+        <ion-item lines="none">
+
+        </ion-item>
+
+
+
+  </div>
+
+
+</ion-content>

@@ -1,0 +1,25 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar style="--color:var(--appC);">
+    <app-back-button [btnIcon]="btnIcon" [btnText]="btnText" (click)="closeModal()" [defaultHref]="defaultHref"></app-back-button>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-margin-top">
+   <ion-item class="ion-margin-horizontal">
+    <ion-input type="text" placeholder="Search Content Here" class="searchInput" [(ngModel)]="searchInput" [clearInput]="true"></ion-input>
+   </ion-item>
+
+   <ion-item lines="none" class="ion-margin-top">
+    <ion-buttons slot="end">
+      <div class="searchBtn-wrap" (click)="searchContent()">
+        <ion-icon name="search-sharp"></ion-icon>
+      </div>
+      <div (click)="switchMic()" class="ion-margin-start searchBtn-wrap">
+        <ion-icon [name]="micOn ? 'mic' : 'mic-off'"></ion-icon>
+      </div>
+    </ion-buttons>
+
+   </ion-item>
+
+  <ion-text class="ion-margin-horizontal ion-align-center" *ngIf=" !searchInput ">{{noContent}}</ion-text>
+
+</ion-content>

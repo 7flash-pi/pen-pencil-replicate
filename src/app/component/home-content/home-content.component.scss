@@ -1,0 +1,30 @@
+ion-card{
+  height: 120px;
+  width: 100px;
+  border-radius: 20px;
+  ion-img{
+    width: 70px;
+    height: 50px;
+  }
+
+  .content-plan{
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+
+  .content-footer{
+    font-size: 8px;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 10px;
+  }
+}
+p{
+  font-size: 8px;
+  font-weight: 600;
+  text-align: center;
+}
+

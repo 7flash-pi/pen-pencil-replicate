@@ -1,0 +1,24 @@
+<ion-header class="ion-no-border" >
+  <ion-toolbar class="guidance-toolbar">
+    <app-back-button [defaultHref]="defaultHref" [btnIcon]="btnIcon"  btnText="Back"></app-back-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <section class="bg">
+    <ion-grid>
+      <ion-row>
+        <ion-col class="header-text">
+          Guidance & Counseling
+        </ion-col>
+      </ion-row>
+        <ion-row class="navigate-btns">
+        <ion-chip class="ion-padding" [ngClass] = "openCard ? 'active' : 'row-chip'"  class="ion-margin-end"  (click)="openGuideCard()">Guidance</ion-chip>
+        <ion-chip class="ion-padding"  (click) ="openBlogCard()"  [ngClass]= " openBlog ? 'active' : 'row-chip' "    >Blogs</ion-chip>
+      </ion-row>
+    </ion-grid>
+  </section>
+
+<app-guidance-card *ngIf=" openCard === true "></app-guidance-card>
+<app-blog-card *ngIf=" openBlog === true " ></app-blog-card>
+</ion-content>

@@ -1,0 +1,42 @@
+<svg height="39" viewBox="0 0 35 39" width="35"
+     xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient gradientUnits="objectBoundingBox" id="linear-gradient" x2="1" y1="0.5" y2="0.5">
+            <stop offset="0" stop-color="#e63946"/>
+            <stop offset="1" stop-color="#ff6b7a"/>
+        </linearGradient>
+    </defs>
+    <g id="associates" transform="translate(-1.66)">
+        <g data-name="Group 211" id="Group_211">
+            <g data-name="Group 210" id="Group_210">
+                <ellipse cx="4.955" cy="5.043" data-name="Ellipse 9" fill="url(#linear-gradient)" id="Ellipse_9"
+                         rx="4.955"
+                         ry="5.043" transform="translate(19.97)"/>
+            </g>
+        </g>
+        <g data-name="Group 213" id="Group_213">
+            <g data-name="Group 212" id="Group_212">
+                <path d="M13.66,5.727A5,5,0,0,0,8.7,10.77a5.167,5.167,0,0,0,.04.631h9.83a5.18,5.18,0,0,0,.04-.631A5,5,0,0,0,13.66,5.727Z"
+                      data-name="Path 223"
+                      fill="url(#linear-gradient)"
+                      id="Path_223"/>
+            </g>
+        </g>
+        <g data-name="Group 215" id="Group_215">
+            <g data-name="Group 214" id="Group_214">
+                <path d="M23.422,19.811H34.088V15.64a1.84,1.84,0,0,0-1.824-1.856H3.484A1.84,1.84,0,0,0,1.66,15.64v21.5A1.84,1.84,0,0,0,3.484,39h28.78a1.84,1.84,0,0,0,1.824-1.856V32.973H23.422a4.025,4.025,0,0,1-3.985-4.056v-5.05A4.025,4.025,0,0,1,23.422,19.811Z"
+                      data-name="Path 224"
+                      fill="url(#linear-gradient)"
+                      id="Path_224"/>
+            </g>
+        </g>
+        <g data-name="Group 217" id="Group_217">
+            <g data-name="Group 216" id="Group_216">
+                <path d="M35.166,22.346H23.422a1.508,1.508,0,0,0-1.494,1.521v5.05a1.508,1.508,0,0,0,1.494,1.521H35.166a1.508,1.508,0,0,0,1.494-1.521v-5.05A1.508,1.508,0,0,0,35.166,22.346Zm-9.272,5.831a1.785,1.785,0,1,1,1.754-1.785A1.77,1.77,0,0,1,25.894,28.177Z"
+                      data-name="Path 225"
+                      fill="url(#linear-gradient)"
+                      id="Path_225"/>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,25 @@
+<svg height="30" viewBox="0 0 33 30" width="33"
+     xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient gradientUnits="objectBoundingBox" id="linear-gradient" x2="1" y1="0.5" y2="0.5">
+            <stop offset="0" stop-color="#e63946"/>
+            <stop offset="1" stop-color="#ff6b7a"/>
+        </linearGradient>
+    </defs>
+    <g id="progress_report" transform="translate(-10.089 -13.604)">
+        <g data-name="Group 220" id="Group_220">
+            <path d="M30.9,23.047a2.678,2.678,0,0,0-2.766-2.581H25.257a2.678,2.678,0,0,0-2.766,2.581V41.023A2.678,2.678,0,0,0,25.257,43.6h2.875A2.678,2.678,0,0,0,30.9,41.023Z"
+                  data-name="Path 229"
+                  fill="url(#linear-gradient)"
+                  id="Path_229"/>
+            <path d="M18.5,29.321a2.882,2.882,0,0,0-2.977-2.777H13.066a2.882,2.882,0,0,0-2.977,2.777V40.827A2.882,2.882,0,0,0,13.066,43.6H15.52A2.882,2.882,0,0,0,18.5,40.827Z"
+                  data-name="Path 230"
+                  fill="url(#linear-gradient)"
+                  id="Path_230"/>
+            <path d="M43.089,16.184A2.678,2.678,0,0,0,40.323,13.6H37.448a2.678,2.678,0,0,0-2.766,2.581V41.023A2.678,2.678,0,0,0,37.448,43.6h2.875a2.678,2.678,0,0,0,2.766-2.581Z"
+                  data-name="Path 231"
+                  fill="url(#linear-gradient)"
+                  id="Path_231"/>
+        </g>
+    </g>
+</svg>

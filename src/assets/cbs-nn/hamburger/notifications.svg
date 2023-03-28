@@ -1,0 +1,22 @@
+<svg height="44.098" viewBox="0 0 35.193 44.098" width="35.193"
+     xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient gradientUnits="objectBoundingBox" id="linear-gradient" x2="1" y1="0.5" y2="0.5">
+            <stop offset="0" stop-color="#e63946"/>
+            <stop offset="1" stop-color="#ff6b7a"/>
+        </linearGradient>
+    </defs>
+    <g id="notifications" transform="translate(-52.518 0.5)">
+        <path d="M185.2,465.8a6.511,6.511,0,0,0,11.919,0Z" data-name="Path 1266" fill="url(#linear-gradient)"
+              id="Path_1266" stroke="rgba(0,0,0,0)" stroke-width="1"
+              transform="translate(-121.041 -426.591)"/>
+        <path d="M201.692,4.116a14.728,14.728,0,0,1,5,.875V4.8a4.807,4.807,0,0,0-4.8-4.8h-.4a4.807,4.807,0,0,0-4.8,4.8v.194A14.644,14.644,0,0,1,201.692,4.116Z"
+              data-name="Path 1267"
+              fill="url(#linear-gradient)"
+              id="Path_1267" stroke="rgba(0,0,0,0)" stroke-width="1" transform="translate(-131.573)"/>
+        <path d="M85.9,109.034H54.336a1.293,1.293,0,0,1-1.271-.985,1.225,1.225,0,0,1,.673-1.4,6.667,6.667,0,0,0,2.037-2.769c1.759-3.712,2.121-8.939,2.121-12.668a12.218,12.218,0,0,1,24.436-.051v.051c0,3.729.37,8.956,2.121,12.668a6.751,6.751,0,0,0,2.037,2.769,1.216,1.216,0,0,1,.673,1.4A1.276,1.276,0,0,1,85.9,109.034Zm.606-2.374Z"
+              data-name="Path 1268"
+              fill="url(#linear-gradient)"
+              id="Path_1268" stroke="rgba(0,0,0,0)" stroke-width="1" transform="translate(0 -72.35)"/>
+    </g>
+</svg>

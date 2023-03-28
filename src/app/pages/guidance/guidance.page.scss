@@ -1,0 +1,44 @@
+.guidance-toolbar{
+  --background:#d1d1d1 !important;
+  box-shadow: none;
+}
+
+.header-text{
+  margin:30px 26px;
+  text-align: left;
+  font-size: 20px;
+  font-weight: 700;
+  --color:#192c48;
+}
+
+ion-row{
+  align-items: center;
+  .row-chip{
+    --background:#fff;
+    --color:#73767D;
+    text-transform: capitalize;
+    font-size: 12px;
+  }
+}
+
+.navigate-btns{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 60%;
+  margin: 0 auto -20px auto;
+
+}
+
+.active{
+  --color:#EA4D4E;
+  --background:#fff;
+  text-transform: capitalize;
+  font-size: 10px;
+}
+.bg{
+  background:#d1d1d1;
+  background-image: url("/assets/cbs-nn/universal/bg.png") 0 0/100% 100% no-repeat;
+  background-size: 84%;
+  margin-bottom: 20px;
+}

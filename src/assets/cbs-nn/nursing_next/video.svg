@@ -1,0 +1,33 @@
+<svg height="40.727" viewBox="0 0 39.58 40.727" width="39.58" xmlns="http://www.w3.org/2000/svg">
+    <g id="video" transform="translate(-284.546 -649.563)">
+        <g data-name="Group 24" id="Group_24" transform="translate(285.046 650.063)">
+            <g data-name="Group 23" id="Group_23">
+                <path d="M285.429,671.8a.746.746,0,0,0,.346.088.719.719,0,0,0,.383-.113l7.857-5.058a.721.721,0,0,0,.331-.61.714.714,0,0,0-.331-.605l-7.857-5.058a.71.71,0,0,0-.729-.025.726.726,0,0,0-.37.634v10.111a.728.728,0,0,0,.37.635Zm1.057-9.43L292.3,666.1l-5.816,3.743Zm0,0"
+                      data-name="Path 80"
+                      fill="#bfbfbf"
+                      id="Path_80" stroke="#aeaeae" stroke-miterlimit="10" stroke-width="1"
+                      transform="translate(-270.054 -653.104)"/>
+                <path d="M272.046,654.063v39.727h38.58V654.063Zm37.154,1.447v23.834H273.477V655.509Zm-35.724,36.833V680.79H309.2v11.553Zm0,0"
+                      data-name="Path 81"
+                      fill="#bfbfbf"
+                      id="Path_81" stroke="#aeaeae" stroke-miterlimit="10" stroke-width="1"
+                      transform="translate(-272.046 -654.063)"/>
+                <path d="M304.11,681.912H286.96V680.47a.713.713,0,1,0-1.427,0v1.442h-2.857a.723.723,0,0,0,0,1.446h2.857V684.8a.713.713,0,1,0,1.427,0v-1.442h17.15a.723.723,0,0,0,0-1.446Zm0,0"
+                      data-name="Path 82"
+                      fill="#bfbfbf"
+                      id="Path_82" stroke="#aeaeae" stroke-miterlimit="10" stroke-width="1"
+                      transform="translate(-270.529 -650.131)"/>
+                <path d="M276.48,679.746a.715.715,0,0,0-.715.723v4.33a.713.713,0,1,0,1.426,0v-4.33a.714.714,0,0,0-.711-.723Zm0,0"
+                      data-name="Path 83"
+                      fill="#bfbfbf"
+                      id="Path_83" stroke="#aeaeae" stroke-miterlimit="10" stroke-width="1"
+                      transform="translate(-271.477 -650.131)"/>
+                <path d="M278.958,679.746a.717.717,0,0,0-.715.723v4.33a.715.715,0,1,0,1.431,0v-4.33a.718.718,0,0,0-.715-.723Zm0,0"
+                      data-name="Path 84"
+                      fill="#bfbfbf"
+                      id="Path_84" stroke="#aeaeae" stroke-miterlimit="10" stroke-width="1"
+                      transform="translate(-271.098 -650.131)"/>
+            </g>
+        </g>
+    </g>
+</svg>

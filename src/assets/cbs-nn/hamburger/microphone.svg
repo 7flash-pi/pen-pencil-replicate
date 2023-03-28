@@ -1,0 +1,19 @@
+<svg height="49.738" viewBox="0 0 34 49.738" width="34"
+     xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient gradientUnits="objectBoundingBox" id="linear-gradient" x2="1" y1="0.5" y2="0.5">
+            <stop offset="0" stop-color="#e63946"/>
+            <stop offset="1" stop-color="#ff6b7a"/>
+        </linearGradient>
+    </defs>
+    <g id="microphone" transform="translate(-81)">
+        <path d="M115,226.457a1.457,1.457,0,0,0-2.914,0,14.086,14.086,0,0,1-28.172,0,1.457,1.457,0,0,0-2.914,0,17.022,17.022,0,0,0,15.543,16.937v6.572H88.674a1.457,1.457,0,1,0,0,2.914h18.652a1.457,1.457,0,1,0,0-2.914H99.457v-6.572A17.022,17.022,0,0,0,115,226.457Z"
+              data-name="Path 1734"
+              fill="url(#linear-gradient)"
+              id="Path_1734" transform="translate(0 -203.143)"/>
+        <path d="M161.223,24.772a1.457,1.457,0,0,1,0-2.914h5.343v-3.3h-6.9a1.457,1.457,0,0,1,0-2.914h6.9v-3.3h-5.343a1.457,1.457,0,0,1,0-2.914h5.306A10.253,10.253,0,0,0,156.366,0H155.2a10.253,10.253,0,0,0-10.163,9.423h5.306a1.457,1.457,0,1,1,0,2.914H145v3.3h6.9a1.457,1.457,0,0,1,0,2.914H145v3.3h5.343a1.457,1.457,0,0,1,0,2.914h-5.3A10.213,10.213,0,0,0,155.2,34.1h1.166a10.213,10.213,0,0,0,10.162-9.326Z"
+              data-name="Path 1735"
+              fill="url(#linear-gradient)"
+              id="Path_1735" transform="translate(-57.783)"/>
+    </g>
+</svg>

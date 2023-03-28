@@ -1,0 +1,22 @@
+<svg height="38.276" viewBox="0 0 38.373 38.276" width="38.373"
+     xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient gradientUnits="objectBoundingBox" id="linear-gradient" x2="1" y1="0.5" y2="0.5">
+            <stop offset="0" stop-color="#e63946"/>
+            <stop offset="1" stop-color="#ff6b7a"/>
+        </linearGradient>
+    </defs>
+    <g id="about" transform="translate(-2.372 -2.276)">
+        <rect data-name="Rectangle 26" fill="#fff" height="23.79" id="Rectangle_26"
+              stroke="#000" stroke-miterlimit="10" stroke-width="0.833" transform="translate(17.092 9.274)"
+              width="8.253"/>
+        <g data-name="Group 224" id="Group_224">
+            <g data-name="Group 223" id="Group_223">
+                <path d="M35.126,7.881a19.163,19.163,0,1,0,0,27.066A19.223,19.223,0,0,0,35.126,7.881ZM24.061,29.735a2.5,2.5,0,0,1-5.005,0V19.75a2.5,2.5,0,0,1,5.005,0ZM21.514,15.483a2.229,2.229,0,0,1-2.372-2.276,2.228,2.228,0,0,1,2.4-2.306,2.3,2.3,0,1,1-.029,4.582Z"
+                      data-name="Path 241"
+                      fill="url(#linear-gradient)"
+                      id="Path_241"/>
+            </g>
+        </g>
+    </g>
+</svg>

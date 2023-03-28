@@ -1,0 +1,21 @@
+ion-item{
+  ion-icon{
+    font-size: x-large;
+  }
+
+  ion-item.item-has-focus {
+    --highlight-background:#1d3558;
+}
+}
+
+.searchBtn-wrap{
+  height: 45px;
+  width: 45px;
+  background:#1d3558;
+  color:#fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}

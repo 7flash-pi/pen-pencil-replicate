@@ -1,0 +1,40 @@
+ion-img{
+  width: 50%;
+  height:50px;
+}
+
+
+.menu-logo{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+ion-content{
+  width: 100%;
+  height:100%;
+}
+
+.menu-btn{
+  --color:var(--appC);
+}
+
+ion-item{
+  ion-img{
+    height: 39px;
+    width: 41px;
+  }
+}
+
+ion-title{
+  ion-img{
+    width: 100px;
+    height: 28px;
+  }
+}
+
+.div-circle{
+  height: 35px;
+  width: 35px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
