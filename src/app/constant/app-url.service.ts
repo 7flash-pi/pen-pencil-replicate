@@ -15,5 +15,14 @@ export class AppUrlService {
 
   public get PUBLIC_NEWS(): string {
     return this.APP_URL_V1 + `news/${ORGANIZATION_ID}/list`;
-}
+  }
+
+  public TOPIC_CONTENT_LIST(programId, subjectId, chapterId, topicContentId) {
+    return this.APP_URL_V1 + `programs/${programId}/subjects/${subjectId}/chapters/${chapterId}/topics/${topicContentId}/contents`;
+  }
+
+  public CONTENT_COMPLETE(programId, subjectId, chapterId, topicId, contentId) {
+    return this.APP_URL_V1 + `programs/${programId}/subjects/${subjectId}/chapters/${chapterId}/topics/${topicId}/contents/${contentId}/complete`;
+  }
+
 }

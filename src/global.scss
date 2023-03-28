@@ -24,6 +24,17 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800,900&display=swap');
+
+* {
+  font-family: 'Montserrat', sans-serif;
+  text-rendering: optimizeSpeed;
+}
+
+:root {
+  --ion-font-family: 'Montserrat', sans-serif !important;
+  text-rendering: optimizeSpeed;
+}
 
 .login-content{
 margin: 0 2em;

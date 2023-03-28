@@ -11,13 +11,16 @@
     <ion-label>Login to your exisitng account of NN Live</ion-label>
 
     <section class="ion-margin-top">
-      <form >
+      <form [formGroup]= "loginForm" autocomplete="off" >
         <ion-item class="ion-margin-top box" lines="none" >
-          <ion-input type="tel" placeholder="Phone Number" required [(ngModel)]="phoneNumber" name="phoneNumber"></ion-input>
+          <ion-input type="tel" placeholder="Phone Number" required
+          name="phoneNumber" maxlength="10" minlength="10"
+          formControlName="mobile" (keyup)="checkphoneNumber($event)"></ion-input>
         </ion-item>
 
         <ion-item class="ion-margin-top box" lines="none">
-          <ion-input [type]=" showpass ? 'text' :'password' "  placeholder="Password" required [(ngModel)]="password" name="password"></ion-input>
+          <ion-input [type]=" showpass === false ? 'password' :'text' "  placeholder="Password" required
+          name="password" mixlength="6" formControlName="password"></ion-input>
         </ion-item>
       </form>
 

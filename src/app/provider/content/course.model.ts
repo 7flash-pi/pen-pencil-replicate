@@ -1,0 +1,34 @@
+export class ContentModal {
+  id: string;
+  title: string;
+  type: string;
+  isPurchased: boolean;
+  isBookmarked: boolean;
+  price: number;
+  createdAt: string;
+  contents: Array<any>;
+  contentType: string;
+  fileUrl: string;
+  isAvailableFromPoints: boolean;
+  topic: any;
+  restrictContent: boolean;
+  restrictionCount: number;
+  totalConsumed: number;
+  isLive: boolean;
+  commentCount: number;
+  upvoteCount: number;
+  isLiked: boolean;
+  shareCount: number;
+  ratingCount: number;
+  totalWatchTime: number;
+  totalDuration: number;
+  availableOn: Array<string> = [];
+  publishDate: string;
+  onMobile: boolean;
+  actions: Array<string> = [];
+  imageUrl: string;
+  showNewTag: boolean;
+  isImportant: boolean;
+  programId: string;
+  isActive: boolean;
+}
