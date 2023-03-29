@@ -41,6 +41,10 @@ const routes: Routes = [
     path: 'app-tours',
     loadChildren: () => import('./pages/app-tours/app-tours.module').then( m => m.AppToursPageModule)
   },
+  {
+    path: 'notifications',
+    loadChildren: () => import('./pages/notifications/notifications.module').then( m => m.NotificationsPageModule)
+  },
 ];
 
 @NgModule({

@@ -24,5 +24,11 @@ export class AppUrlService {
   public CONTENT_COMPLETE(programId, subjectId, chapterId, topicId, contentId) {
     return this.APP_URL_V1 + `programs/${programId}/subjects/${subjectId}/chapters/${chapterId}/topics/${topicId}/contents/${contentId}/complete`;
   }
+  public get LOGIN() {
+    return this.APP_URL_V1 + 'oauth/token';
+  }
+  public get GET_NOTIFICATION() {
+    return this.APP_URL_V1 + 'notification';
+  }
 
 }

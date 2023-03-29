@@ -26,4 +26,8 @@ export class HomeNavComponent  implements OnInit {
       this.router.navigate(['app-tours']);
     }
 
+    openNotification(){
+      this.router.navigate(['notifications'])
+    }
+
 }

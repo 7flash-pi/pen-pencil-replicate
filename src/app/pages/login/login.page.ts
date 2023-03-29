@@ -6,7 +6,7 @@ import { TandcModalComponent } from 'src/app/component/tandc-modal/tandc-modal.c
 import { GlobalService } from 'src/app/provider/global-services/global.service';
 import { Platform } from '@ionic/angular';
 import { LoadingService } from 'src/app/provider/loading/loading.service';
-import { LoggedInService } from 'src/app/provider/login/loading/logged-in.service';
+import { LoggedInService } from 'src/app/provider/afterLogin/logged-in.service';
 
 
 @Component({
@@ -61,6 +61,7 @@ export class LoginPage implements OnInit {
         }
       }
 
+
       this.detectChange();
 }
 
@@ -112,6 +113,7 @@ export class LoginPage implements OnInit {
      await this.loading.showLoading(msg);
 
      try{
+
 
      }
      catch{
