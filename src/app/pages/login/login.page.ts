@@ -5,6 +5,8 @@ import { ModalController } from '@ionic/angular';
 import { TandcModalComponent } from 'src/app/component/tandc-modal/tandc-modal.component';
 import { GlobalService } from 'src/app/provider/global-services/global.service';
 import { Platform } from '@ionic/angular';
+import { LoadingService } from 'src/app/provider/loading/loading.service';
+import { LoggedInService } from 'src/app/provider/login/loading/logged-in.service';
 
 
 @Component({
@@ -19,7 +21,7 @@ export class LoginPage implements OnInit {
   }) btn:ElementRef;
 
   loginForm:FormGroup;
-  showpass:boolean;
+  showpass:boolean=false;
   phoneNumber:number;
   platform:any;
   phoneRegex:boolean=false;
@@ -31,8 +33,9 @@ export class LoginPage implements OnInit {
               private fb:FormBuilder,
               private gs:GlobalService ,
               private pf:Platform,
-              private changeDetect:ChangeDetectorRef
-              ) {
+              private changeDetect:ChangeDetectorRef,
+              private loading:LoadingService,
+              private afterLogin:LoggedInService ) {
                 this.platform=this.pf;
               }
 
@@ -94,11 +97,29 @@ export class LoginPage implements OnInit {
         console.log(this.btn.nativeElement);
       }
      })
-    return modal.present();
+    modal.present();
   }
 
-  loginUser(event,btn){
-    console.log(event,btn);
+ async loginUser(event,btn){
+
+    if(this.loginForm.value.mobile == '' || this.loginForm.value.password == '' ){
+      this.gs.showToast('please fill empty fields',1000,'bottom');
+      btn.disabled=false;
+      return;
+    }
+    event.target.disabled=true;
+    const msg= 'Logging In.Please Wait...';
+     await this.loading.showLoading(msg);
+
+     try{
+
+     }
+     catch{
+
+     }
+
+
+
   }
 
 
