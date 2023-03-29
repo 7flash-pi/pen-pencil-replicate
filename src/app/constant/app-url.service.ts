@@ -30,5 +30,8 @@ export class AppUrlService {
   public get GET_NOTIFICATION() {
     return this.APP_URL_V1 + 'notification';
   }
+  public GET_NOTIFICAION_METADATA(campaignId: string) {
+    return this.APP_URL_V1 + `notification/${campaignId}/campaign-meta-details`;
+}
 
 }

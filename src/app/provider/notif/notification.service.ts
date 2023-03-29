@@ -9,33 +9,24 @@ import { retry,tap } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class NotificationService extends BaseService{
+export class NotificationService {
 
-
-
-  constructor(
+    constructor(
     private appUrl:AppUrlService,
     private globalService:GlobalService,
-    public httpClient:HttpClient
+    private httpClient:HttpClient
   ) {
-    super(httpClient);
   }
 
   getNotification(query?){
     let url=this.appUrl.GET_NOTIFICATION;
-
-    if(!this.isEmpty(query)){
-      query = query + '?';
-    for (const key in query) {
-      if (query.hasOwnProperty(key)){
-          url += key + '=' + query[key] + '&';
-        }
-      }
-    url = url.substr(0, url.length - 1);
-    }
-
     return  this.httpClient.get(url).pipe(retry(1),tap());
   }
+
+  /*getNotificationMetadata(campaignId:string){
+    return this.httpClient.get(this.appUrl.GET_NOTIFICAION_METADATA(campaignId)).pipe(retry(1),tap())
+
+  }*/
 
 
 }
