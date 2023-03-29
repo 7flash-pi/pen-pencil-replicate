@@ -1,5 +1,7 @@
 .list-menu{
   margin-top: 0.5em ;
+  width: 90%;
+  text-align: center;
 }
 
 .icon-label{
@@ -21,12 +23,12 @@ ion-img{
   width: 90%;
   margin: 0 auto;
   background:#d1d1d1;
+  border-radius: 1rem;
   background-image: url('/assets/home_screen/bg1.png') !important;
   background-repeat: no-repeat;
   background-size: 77%;
   background-position-x: right;
   background-position-y: 40px;
-  border-radius: 1rem;
 }
 .edit-userInfo{
   font-size: 20px;

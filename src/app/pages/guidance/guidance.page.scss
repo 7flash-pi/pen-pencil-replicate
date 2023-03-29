@@ -8,7 +8,7 @@
   text-align: left;
   font-size: 20px;
   font-weight: 700;
-  --color:#192c48;
+  --color:var(--apptxt);
 }
 
 ion-row{
@@ -38,7 +38,9 @@ ion-row{
 }
 .bg{
   background:#d1d1d1;
-  background-image: url("/assets/cbs-nn/universal/bg.png") 0 0/100% 100% no-repeat;
-  background-size: 84%;
+  background-image: url('/assets/cbs-nn/universal/bg.png') !important;
+  background-repeat: no-repeat;
+  background-size: 85%;
+
   margin-bottom: 20px;
 }

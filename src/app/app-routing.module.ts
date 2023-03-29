@@ -30,10 +30,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/sdl/sdl.module').then( m => m.SdlPageModule)
   },
   {
-    path: 'tandc-modal',
-    loadChildren: () => import('./pages/tandc-modal/tandc-modal.module').then( m => m.TandcModalPageModule)
-  },
-  {
     path: 'referandwin',
     loadChildren: () => import('./pages/referandwin/referandwin.module').then( m => m.ReferandwinPageModule)
   },

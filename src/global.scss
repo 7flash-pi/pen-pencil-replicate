@@ -73,8 +73,11 @@ ion-button{
     width: 90%;
     border-radius: 15px;
     ---background:#fff;
-    margin: auto auto ;
+    transform: translate3d(0,40px,0);
+    opacity: .01;
 
   }
 
 }
+
+

@@ -15,8 +15,11 @@ export class TandcModalComponent  implements OnInit {
   ngOnInit() {}
 
   close(){
-    this.checked=true;
-    this.modalctrl.dismiss();
+    this.modalctrl.dismiss(this.checked);
+  }
+
+  handleChange(event){
+    this.checked=event.detail.checked;
   }
 
 }

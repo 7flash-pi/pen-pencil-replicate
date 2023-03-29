@@ -11,7 +11,7 @@
     <ion-label>Login to your exisitng account of NN Live</ion-label>
 
     <section class="ion-margin-top">
-      <form [formGroup]= "loginForm" autocomplete="off" >
+      <form [formGroup]= "loginForm" autocomplete="off" #authForm="ngForm" >
         <ion-item class="ion-margin-top box" lines="none" >
           <ion-input type="tel" placeholder="Phone Number" required
           name="phoneNumber" maxlength="10" minlength="10"
@@ -32,7 +32,7 @@
       <ion-label >Show Password</ion-label>
     </ion-item >
 
-    <ion-button shape="round" color="danger" class="login-btn" (click)="gotoTandC()" > Login </ion-button>
+    <ion-button #btn  shape="round" color="danger" class="login-btn" (click)=" btn.disables = true;  gotoTandC( $event , btn)"> Login </ion-button>
 
     <ion-text (click)="gotosignup()" class="ion-margin-top">Don't have an account?<span style="color:#E72229">Signup</span></ion-text>
 
