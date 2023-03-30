@@ -12,6 +12,7 @@ import { DownloadedVideosComponent } from './downloaded-videos/downloaded-videos
 import { VideosBatchComponent } from './videos-batch/videos-batch.component';
 import { SearchModalComponent } from './search-modal/search-modal.component';
 import { HomeNavComponent } from './home-nav/home-nav.component';
+import { UserCardComponent } from './user-card/user-card.component';
 
 
 
@@ -23,7 +24,8 @@ import { HomeNavComponent } from './home-nav/home-nav.component';
     DownloadedVideosComponent,
     VideosBatchComponent,
     SearchModalComponent,
-    HomeNavComponent],
+    HomeNavComponent,
+   UserCardComponent],
   imports: [
     CommonModule,
     IonicModule,
@@ -36,7 +38,8 @@ import { HomeNavComponent } from './home-nav/home-nav.component';
     VideosBatchComponent,
     DownloadedVideosComponent,
     SearchModalComponent,
-    HomeNavComponent
+    HomeNavComponent,
+    UserCardComponent
   ]
 })
 export class SharedModule { }

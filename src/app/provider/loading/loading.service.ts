@@ -7,11 +7,14 @@ import { LoadingController } from '@ionic/angular';
 export class LoadingService {
 
   isLoading:any;
+  private content:string;
 
-  constructor(private loadingCtrl:LoadingController) { }
+  constructor(private loading:LoadingController) { }
 
  async showLoading(message){
-  const loading= await this.loadingCtrl.create({
+
+  this.content=message;
+  const loading= await this.loading.create({
     message:message,
     spinner:'crescent',
     cssClass:'loading-css',
@@ -22,4 +25,14 @@ export class LoadingService {
   })
   loading.present();
  }
+ async unloadData(message?) {
+  if (this.loading != null) {
+      await this.loading.dismiss().then(() => {
+          this.loading = null;
+      }).catch(e => console.log(e));
+
+
+      this.content = '';
+  }
+}
 }

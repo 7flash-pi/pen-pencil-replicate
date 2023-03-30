@@ -1,14 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { GlobalService } from 'src/app/provider/global-services/global.service';
 import { Subscription } from 'rxjs';
-
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.page.html',
-  styleUrls: ['./home.page.scss'],
+  selector: 'app-user-card',
+  templateUrl: './user-card.component.html',
+  styleUrls: ['./user-card.component.scss'],
 })
-export class HomePage implements OnInit {
-
+export class UserCardComponent  implements OnInit {
   userInfo:any;
   userSub:Subscription;
 
@@ -16,16 +14,14 @@ export class HomePage implements OnInit {
 
   ngOnInit() {
     this.getUserInfo();
-    console.log(this.userInfo)
   }
 
-  getUserInfo(){
-    this.userSub = this.globalService.getUser().subscribe( user => {
+ async  getUserInfo(){
+    this.userSub=await this.globalService.getUser().subscribe( user => {
       if(user){
-        this.userInfo = user;
+      this.userInfo=user;
       }
-    });
-
+    })
   }
 
 }

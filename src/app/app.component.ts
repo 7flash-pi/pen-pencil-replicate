@@ -1,11 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { GlobalService } from './provider/global-services/global.service';
+import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   public appPages = [
     { title: 'Smart digital library', url: 'sdl', img: 'assets/icons/sdl.png' },
     { title: 'My Package', url: 'pages/home', img: 'assets/cbs-nn/hamburger/my_package.svg' },
@@ -29,8 +31,17 @@ export class AppComponent {
 
   ];
 
+  userInfo:any;
+  userSub:Subscription;
+
+
   nightMode:boolean=false;
-  constructor(private router:Router) {}
+  constructor(private router:Router,
+    private globalService:GlobalService) {}
+
+  ngOnInit(): void {
+    this.getUserInfo();
+  }
 
   gotomypackage(){
     this.router.navigate(['home']);
@@ -38,5 +49,13 @@ export class AppComponent {
 
   gotosmd(){
     this.router.navigate(['smd']);
+  }
+
+  getUserInfo(){
+    this.userSub=this.globalService.getUser().subscribe( user =>{
+      if(user){
+      this.userInfo=user;
+      }
+    })
   }
 }

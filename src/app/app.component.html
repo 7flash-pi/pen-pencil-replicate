@@ -2,10 +2,11 @@
 <ion-app>
   <ion-split-pane contentId="main-content">
     <ion-menu contentId="main-content" type="overlay">
-      <ion-content>
+
+      <ion-content >
 
         <!--user info -card-->
-        <div class="user-info-card bg-img">
+        <div class="user-info-card bg-img" >
           <ion-grid class="ion-margin-top">
               <ion-row>
                 <ion-col size="12" class="ion-text-end">
@@ -16,9 +17,9 @@
                       <img src="https://img.freepik.com/premium-vector/man-avatar-profile-round-icon_24640-14044.jpg?w=2000">
                   </ion-avatar>
                 </ion-col>
-                <ion-col class="mov-col" size="8">
-                  <h5>Hi, User !</h5>
-                  <p>User.info2.gmail.com</p>
+                <ion-col class="mov-col" size="8" *ngIf="userInfo">
+                  <h5>Hi,{{userInfo.firstName}} !</h5>
+                  <p>{{userInfo.email}}</p>
                 </ion-col>
             </ion-row>
           </ion-grid>

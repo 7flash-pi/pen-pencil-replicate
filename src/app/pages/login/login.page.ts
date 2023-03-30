@@ -1,4 +1,4 @@
-import {  ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import {  ChangeDetectorRef, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
@@ -7,6 +7,8 @@ import { GlobalService } from 'src/app/provider/global-services/global.service';
 import { Platform } from '@ionic/angular';
 import { LoadingService } from 'src/app/provider/loading/loading.service';
 import { LoggedInService } from 'src/app/provider/afterLogin/logged-in.service';
+import  { LoginService } from 'src/app/provider/login/login.service';
+import { MenuController } from '@ionic/angular';
 
 
 @Component({
@@ -14,7 +16,7 @@ import { LoggedInService } from 'src/app/provider/afterLogin/logged-in.service';
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
-export class LoginPage implements OnInit {
+export class LoginPage implements OnInit ,OnDestroy {
 
   @ViewChild('btn',{
     static:true
@@ -35,16 +37,22 @@ export class LoginPage implements OnInit {
               private pf:Platform,
               private changeDetect:ChangeDetectorRef,
               private loading:LoadingService,
-              private afterLogin:LoggedInService ) {
+              private afterLogin:LoggedInService,
+              private _login:LoginService,
+              private menuctrl:MenuController ) {
                 this.platform=this.pf;
               }
 
   ngOnInit() {
+    this.menuctrl.enable(false);
     this.loginForm = this.fb.group({
       mobile:[this.phoneNumber,[Validators.required,Validators.maxLength(10),Validators.minLength(10),Validators.pattern('^[0-9]*$')]],
       password:['',[Validators.required,Validators.maxLength(6)]]
     });
-    console.log(this.loginForm);
+  }
+
+  ngOnDestroy(): void {
+    this.menuctrl.enable(true);
   }
 
   checkphoneNumber(input){
@@ -60,10 +68,8 @@ export class LoginPage implements OnInit {
           this.loginForm.reset();
         }
       }
-
-
-      this.detectChange();
-}
+    this.detectChange();
+  }
 
   detectChange(){
     if (this.platform.is('hybrid')) {
@@ -73,11 +79,7 @@ export class LoginPage implements OnInit {
   }
   }
 
-
-
-
   gotosignup(){
-
     this.router.navigate(['signup']);
   }
 
@@ -94,35 +96,40 @@ export class LoginPage implements OnInit {
       }
       else{
         this.btn.nativeElement.disabled=false;
-        this.gs.showToast('Please accept term and Condition to continue',1000,'top','danger');
+        this.gs.showToast('Please accept term and Condition to continue',1000,'bottom');
         console.log(this.btn.nativeElement);
       }
      })
     modal.present();
   }
 
- async loginUser(event,btn){
+    async loginUser(event,btn){
 
-    if(this.loginForm.value.mobile == '' || this.loginForm.value.password == '' ){
-      this.gs.showToast('please fill empty fields',1000,'bottom');
-      btn.disabled=false;
-      return;
+        if(this.loginForm.value.mobile == '' || this.loginForm.value.password == '' ){
+          this.gs.showToast('please fill empty fields',1000,'bottom');
+          btn.disabled=false;
+          return;
+        }
+        const msg= 'Logging In.Please Wait...';
+        await this.loading.showLoading(msg);
+
+        try{
+              const res=await this._login.login(this.loginForm.value).toPromise();
+              if(res){
+                console.log(res);
+                await this.afterLogin.afterLoginProcess(res);
+              }
+            }
+        catch (err) {
+            console.log(err.message);
+        }
+        finally {
+          event.target.disabled = false;
+          if (btn) {
+              btn.disabled = false;
+          }
+      }
     }
-    event.target.disabled=true;
-    const msg= 'Logging In.Please Wait...';
-     await this.loading.showLoading(msg);
-
-     try{
-
-
-     }
-     catch{
-
-     }
-
-
-
-  }
 
 
 

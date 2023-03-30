@@ -31,12 +31,12 @@ export class NotificationsPage implements OnInit{
 
   async getNotification(event?){
     try{
-      const res= await this.notificationService.getNotification().subscribe();
+      const res= await this.notificationService.getNotification().toPromise();
       const notifications=[];
       res['data'].forEach(item => {
         notifications.push(new NotificationModal(item));
       });
-      this.notificationList=this.notificationList.concat(notifications);
+      this.notificationList=this.notificationList.concat(notifications)
       }
    catch(err){
     console.log(err.message);
