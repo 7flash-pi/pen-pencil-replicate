@@ -12,7 +12,7 @@ export class GlobalService {
   public accessToken;
   private _accessToken$: BehaviorSubject<string> = new BehaviorSubject<string>(null);
   public _user$: BehaviorSubject<any> = new BehaviorSubject<any>(null);
-  public _isUserMenuDisabled$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  public _isUserMenuDisabled$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);cd
 
 
   constructor( private toast:ToastController,

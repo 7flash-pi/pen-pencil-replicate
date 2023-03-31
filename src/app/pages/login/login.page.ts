@@ -110,18 +110,16 @@ export class LoginPage implements OnInit ,OnDestroy {
           btn.disabled=false;
           return;
         }
-        const msg= 'Logging In.Please Wait...';
-        await this.loading.showLoading(msg);
+        await this.loading.showLoading('Logging In.Please Wait...');
 
         try{
               const res=await this._login.login(this.loginForm.value).toPromise();
               if(res){
-                console.log(res);
                 await this.afterLogin.afterLoginProcess(res);
               }
             }
         catch (err) {
-            console.log(err.message);
+            this.gs.showToast('User Not Found',1000,'top');
         }
         finally {
           event.target.disabled = false;

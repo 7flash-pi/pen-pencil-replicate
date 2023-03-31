@@ -24,14 +24,24 @@ export class AppUrlService {
   public CONTENT_COMPLETE(programId, subjectId, chapterId, topicId, contentId) {
     return this.APP_URL_V1 + `programs/${programId}/subjects/${subjectId}/chapters/${chapterId}/topics/${topicId}/contents/${contentId}/complete`;
   }
+
+  //logjn
   public get LOGIN() {
     return this.APP_URL_V1 + 'oauth/token';
   }
+
+  //notification
   public get GET_NOTIFICATION() {
     return this.APP_URL_V1 + 'notification';
   }
   public GET_NOTIFICAION_METADATA(campaignId: string) {
     return this.APP_URL_V1 + `notification/${campaignId}/campaign-meta-details`;
 }
+
+//auth
+public get SET_FCM_TOKEN() {
+  return this.APP_URL_V1 + 'devices';
+}
+
 
 }
