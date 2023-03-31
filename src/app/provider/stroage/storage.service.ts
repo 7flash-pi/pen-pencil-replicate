@@ -9,7 +9,8 @@ export class StorageService {
 
   TOKEN ='token';
   USER = 'user';
-  public _storage: Storage | null = null;
+  DEVICE_ID = 'deviceId';
+   _storage: Storage | null = null;
 
   constructor(private storage:Storage) {
     this.createStorage();
@@ -27,10 +28,27 @@ export class StorageService {
   getUserToken(){
     return localStorage.getItem(this.TOKEN);
   }
+
   setUser(user){
     return this._storage.set(this.USER,user);
   }
+
   getUser(){
     return this._storage.get(this.USER);
   }
+
+  getDeviceId(){
+    return this._storage.get(this.DEVICE_ID)
+  }
+
+  setDeviceId(deviceId){
+    return this._storage.set(this.DEVICE_ID,deviceId);
+
+  }
+
+  clear(){
+    this._storage.clear();
+    localStorage.clear();
+  }
 }
+

@@ -42,6 +42,9 @@ export class AppUrlService {
 public get SET_FCM_TOKEN() {
   return this.APP_URL_V1 + 'devices';
 }
+public get LOGOUT() {
+  return this.APP_URL_V1 + 'oauth/logout';
+}
 
 
 }

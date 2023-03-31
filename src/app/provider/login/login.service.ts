@@ -26,4 +26,8 @@ export class LoginService {
       debounceTime(500),
     );
   }
+
+  registerToken(data){
+    this.httpClient.post(this.appUrl.SET_FCM_TOKEN,data);
+  }
 }

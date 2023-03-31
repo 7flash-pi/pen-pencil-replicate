@@ -18,7 +18,7 @@ export class LoggedInService {
 
     afterLoginProcess(res){
       this.globalService.isLoggedIn=true;
-      this.globalService.setAccessToken(res['data']['refresh_token']);
+      this.globalService.setAccessToken(res['data']['access_token']);
       this.globalService.setUser(res['data']['user']);
       let redirectPath='home';
       this.navController.navigateRoot(redirectPath).then( () =>{

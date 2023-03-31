@@ -17,6 +17,7 @@ export class NotificationsPage implements OnInit{
   unReadMessage=0;
   processing:boolean=true;
   totalCount:number;
+  pageNo=1;
 
   constructor(
     private notificationService:NotificationService,
@@ -25,19 +26,38 @@ export class NotificationsPage implements OnInit{
   ) { }
 
   ngOnInit() {
-    this.getNotification();
-    console.log(this.notificationList);
+    this.getNotification(this.pageNo);
   }
 
-  async getNotification(event?){
+  async getNotification(pageNo,event?){
+
+    const query={
+      page:pageNo
+    }
+    if(pageNo === 1){
+      this.notificationList=[];
+      this.processing=true;
+
+    }
     try{
-      const res= await this.notificationService.getNotification().toPromise()
+      const res= await this.notificationService.getNotification(query).toPromise()
       const notifications=[];
       res['data'].forEach(item => {
         notifications.push(new NotificationModal(item));
       });
 
       this.notificationList=this.notificationList.concat(notifications);
+      this.totalCount = res['paginate'].totalCount;
+      console.log(this.totalCount);
+      const data = [];
+      this.notificationList.forEach((item) => {
+          if (!item['isRead']) {
+              const obj = {
+                  _id: item['_id']
+              };
+              data.push(obj);
+          }
+      });
     }
    catch(err){
     console.log(err.message);

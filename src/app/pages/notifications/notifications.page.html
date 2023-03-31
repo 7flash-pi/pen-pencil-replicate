@@ -6,23 +6,23 @@
 
 <ion-content>
 
-  <ion-card class="ion-margin-horizontal ion-margin-vertical notification-card" >
+  <ion-card class="ion-margin-horizontal ion-margin-vertical notification-card" *ngFor="let notification of notificationList; let i=index">
     <ion-card-content>
 
         <ion-col>
           <ion-item lines="none">
-            <ion-text class="notification-card-header"> "Hybrid Live Teaching: MSN-Medicine</ion-text>
+            <ion-text class="notification-card-header">{{notification.title}}</ion-text>
           </ion-item>
         </ion-col>
     <ion-grid>
       <ion-row>
         <ion-col class="mid">
-          <ion-text class="notification-card-subtitle"> Starts today from 4 pm onwards...Stay tuned and register now!"</ion-text>
+          <ion-text class="notification-card-subtitle">{{notification.text}}</ion-text>
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col class="ion-margin-top ion-no-padding">
-          <ion-text class="notification-card-date">Mar 29, 2023</ion-text>
+          <ion-text class="notification-card-date">{{notification.createdAt | date: 'mediumDate'}}</ion-text>
         </ion-col>
       </ion-row>
     </ion-grid>

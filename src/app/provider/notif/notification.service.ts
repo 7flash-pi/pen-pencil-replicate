@@ -19,10 +19,18 @@ export class NotificationService extends BaseService{
     super(httpClient);
   }
 
-  getNotification(){
+  getNotification(query?){
     let url=this.appUrl.GET_NOTIFICATION;
-      url=url+'?';
+
+    if(!this.isEmpty(query)){
+      url=url+ '?';
+      for(const key in query){
+        if(query.hasOwnProperty(key)){
+          url += key + '=' + query[key] + '&';
+        }
+      }
       url = url.substr(0, url.length - 1);
+    }
 
     return  this.httpClient.get(url).pipe(retry(1),tap());
   }

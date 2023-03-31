@@ -119,7 +119,7 @@ export class LoginPage implements OnInit ,OnDestroy {
               }
             }
         catch (err) {
-            this.gs.showToast('User Not Found',1000,'top');
+            console.log(err.message)
         }
         finally {
           event.target.disabled = false;

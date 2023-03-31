@@ -43,10 +43,10 @@ export class GlobalService {
 
   setAccessToken(token:string) {
     this.isLoggedIn = true;
-      this.accessToken = token;
-        this._accessToken$.next(token);
-        this.storageService.setUserToken(token);
-        return;
+    this.accessToken = token;
+    this._accessToken$.next(token);
+    this.storageService.setUserToken(token);
+    return;
   }
 
   getAccessToken(){
