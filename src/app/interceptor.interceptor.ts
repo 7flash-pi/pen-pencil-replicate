@@ -37,9 +37,7 @@ export class InterceptorService implements HttpInterceptor {
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
 
    this.authToken=this.globalService.accessToken
-   console.log(this.authToken);
-   this.authToken=this.storageService.getUserToken();
-   console.log(this.authToken);
+
 
     const authReq=request.clone( {
       setHeaders:{

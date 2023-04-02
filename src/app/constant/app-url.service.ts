@@ -37,14 +37,17 @@ export class AppUrlService {
   public GET_NOTIFICAION_METADATA(campaignId: string) {
     return this.APP_URL_V1 + `notification/${campaignId}/campaign-meta-details`;
 }
+  public get READ_NOTIFICATION() {
+    return this.APP_URL_V1 + 'notification/mark-read';
+  }
 
-//auth
-public get SET_FCM_TOKEN() {
-  return this.APP_URL_V1 + 'devices';
-}
-public get LOGOUT() {
-  return this.APP_URL_V1 + 'oauth/logout';
-}
+  //auth
+  public get SET_FCM_TOKEN() {
+    return this.APP_URL_V1 + 'devices';
+  }
+  public get LOGOUT() {
+    return this.APP_URL_V1 + 'oauth/logout';
+  }
 
 
 }

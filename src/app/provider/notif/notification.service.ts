@@ -35,10 +35,13 @@ export class NotificationService extends BaseService{
     return  this.httpClient.get(url).pipe(retry(1),tap());
   }
 
- /* getNotificationMetadata(campaignId:string){
+ getNotificationMetadata(campaignId:string){
     return this.httpClient.get(this.appUrl.GET_NOTIFICAION_METADATA(campaignId)).pipe(retry(1),tap())
 
-  }*/
+  }
 
+  readNotifications(data):Observable<any>{
+    return this.httpClient.post(this.appUrl.READ_NOTIFICATION,data);
 
+  }
 }

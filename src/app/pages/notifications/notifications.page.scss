@@ -24,6 +24,7 @@ ion-col{
     color:var(--appPrimary)
   }
 
+
 }
 
 .mid{
@@ -33,4 +34,10 @@ ion-col{
 .notification-card{
  border-radius: 14px ;
  border-bottom-right-radius: 34px !important ;
+}
+.no-notification{
+  width: 80%;
+  margin: 1em auto 0 auto;
+  font-size: 14px;
+  font-weight: 600;
 }
