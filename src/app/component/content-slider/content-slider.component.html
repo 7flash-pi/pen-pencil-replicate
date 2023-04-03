@@ -1,14 +1,27 @@
-<ion-slides>
-  <ion-slide class="content-slide">
+
+
+<swiper-container [slidesPerView]="1" [loop]="true"   #slideWithNav [options]="slideOpt">
+  <swiper-slide>
+    <ion-slide class="content-slide"><!--Click)="openFromSlider(slide)" *ngFor="let slide of bannersB2;-->
+      <ion-img src="https://d2bps9p1kiy4ka.cloudfront.net/5ee9a14f0e10190011c078d1/5546a7bb-c642-43dc-ba08-a61a2d09d750.jpg" alt=""></ion-img>
+      <ion-text class="sub-title">Register for the National NORCET Test of the month. Find the link on our Instagram bio!</ion-text>
+    </ion-slide>
+  </swiper-slide>
+
+  <swiper-slide>
+    <ion-slide class="content-slide">
     <ion-img src="https://d2bps9p1kiy4ka.cloudfront.net/5ee9a14f0e10190011c078d1/5546a7bb-c642-43dc-ba08-a61a2d09d750.jpg" alt=""></ion-img>
     <ion-text class="sub-title">Register for the National NORCET Test of the month. Find the link on our Instagram bio!</ion-text>
-  </ion-slide>
-  <ion-slide class="content-slide">
-    <img src="https://d2bps9p1kiy4ka.cloudfront.net/5ee9a14f0e10190011c078d1/5546a7bb-c642-43dc-ba08-a61a2d09d750.jpg" alt="" class="src">
-    <ion-text class="sub-title">Register for the National NORCET Test of the month. Find the link on our Instagram bio!</ion-text>
-  </ion-slide>
-</ion-slides>
+    </ion-slide>
+  </swiper-slide>
 
+  <swiper-slide>
+    <ion-slide class="content-slide">
+      <ion-img src="https://d2bps9p1kiy4ka.cloudfront.net/5ee9a14f0e10190011c078d1/5546a7bb-c642-43dc-ba08-a61a2d09d750.jpg" alt=""></ion-img>
+      <ion-text class="sub-title">Register for the National NORCET Test of the month. Find the link on our Instagram bio!</ion-text>
+    </ion-slide>
+  </swiper-slide>
+</swiper-container>
 
 
 

@@ -12,6 +12,7 @@ import { SharedModule } from './component/shared.module';
 import { InterceptorService } from './interceptor.interceptor';
 
 
+
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule
@@ -23,5 +24,6 @@ import { InterceptorService } from './interceptor.interceptor';
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     {provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true},],
   bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule {}

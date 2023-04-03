@@ -47,3 +47,37 @@ export class CampaignModal {
   }
 
 }
+
+export class BannerModal {
+  title: string;
+  actionUrl: string;
+  image: FileModal;
+
+  constructor(props) {
+      props = props || {};
+      this.title = props.title || '';
+      this.actionUrl = props.actionUrl || '';
+      this.image = new FileModal(props.image || {});
+  }
+}
+export class FileModal {
+  _id: string;
+  baseUrl: string;
+  key: string;
+  name: string;
+  url: string;
+  status: string;
+  iconUrl: string;
+
+  constructor(data) {
+      const file = data || {};
+      this._id = file._id || '';
+      this.baseUrl = file.baseUrl || '';
+      this.key = file.key || '';
+      this.name = file.name || '';
+      this.url = this.baseUrl + this.key || '';
+      this.status = '';
+      this.iconUrl = '';
+  }
+
+}

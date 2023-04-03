@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { IonicModule} from '@ionic/angular';
 
@@ -23,7 +24,8 @@ import { SharedModule } from 'src/app/component/shared.module';
     HomePageRoutingModule,
     SharedModule
   ],
-  declarations: [HomePage,HomeContentComponent,ContentSliderComponent]
+  declarations: [HomePage,HomeContentComponent,ContentSliderComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 
 })
 export class HomePageModule {}
