@@ -14,14 +14,16 @@
     </section>
 
     <section class="loginSection web-view ">
-      <form  autocomplete="off"  >
+      <form  [formGroup]="signUpForm" autocomplete="off"  >
 
         <ion-item class="ion-margin-vertical box" lines="none" >
           <ion-input type="tel" placeholder="Sign up with mobile number" required
-          maxlength="10" minlength="10" class="ion-padding"  name="phoneNumber" [(ngModel)]="mobileNumber"></ion-input>
-        </ion-item>
+          maxlength="10" minlength="10" class="ion-padding"  name="phoneNumber"
+          (keyup)="checkphoneNumber($event)" formControlName="mobile" aria-label="Sign up with mobile number">
+        </ion-input>
+        </ion-item >
       </form>
-      <ion-button #btn  shape="round" color="danger" expand="block" class="login-btn ion-margin-top" disabled="true">Next </ion-button>
+      <ion-button #btnNext  shape="round" color="danger" expand="block" class="login-btn ion-margin-top"  [disabled]="signUpForm.invalid">Next </ion-button>
     </section>
   </div>
 </ion-content>
@@ -30,7 +32,7 @@
   <ion-toolbar class="ion-text-center ion-tappable">
     <ion-row>
       <ion-col class="ion-tappable" size="12">
-          <ion-text (click)="gotoLogin()">Already have an Account? <span>Login</span></ion-text>
+          <ion-text (click)="gotoLogin()">Already have an account? <span>Login</span></ion-text>
       </ion-col>
   </ion-row>
   </ion-toolbar>
