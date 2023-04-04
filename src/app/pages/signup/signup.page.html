@@ -17,13 +17,14 @@
       <form  [formGroup]="signUpForm" autocomplete="off"  >
 
         <ion-item class="ion-margin-vertical box" lines="none" >
-          <ion-input type="tel" placeholder="Sign up with mobile number" required
+          <ion-input #mobile type="tel" placeholder="Sign up with mobile number" required
           maxlength="10" minlength="10" class="ion-padding"  name="phoneNumber"
           (keyup)="checkphoneNumber($event)" formControlName="mobile" aria-label="Sign up with mobile number">
         </ion-input>
         </ion-item >
       </form>
-      <ion-button #btnNext  shape="round" color="danger" expand="block" class="login-btn ion-margin-top"  [disabled]="signUpForm.invalid">Next </ion-button>
+      <ion-button #btnNext  shape="round" color="danger" expand="block" class="login-btn ion-margin-top"  [disabled]="signUpForm.invalid"
+      (click) ="gotoTandC($event,btn,mobile)">Next </ion-button>
     </section>
   </div>
 </ion-content>

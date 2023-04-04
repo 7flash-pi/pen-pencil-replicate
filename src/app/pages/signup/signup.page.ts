@@ -1,8 +1,10 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { TandcModalComponent } from 'src/app/component/tandc-modal/tandc-modal.component';
 import { GlobalService } from 'src/app/provider/global-services/global.service';
-
+import { ModalController } from '@ionic/angular';
+import { LoadingService } from 'src/app/provider/loading/loading.service';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.page.html',
@@ -20,7 +22,9 @@ export class SignupPage implements OnInit {
 
   constructor(private router:Router,
     private globalService:GlobalService,
-    private fb:FormBuilder) { }
+    private fb:FormBuilder,
+    private modlctrl:ModalController,
+    private loaderService:LoadingService) { }
 
   ngOnInit() {
 
@@ -48,5 +52,38 @@ export class SignupPage implements OnInit {
         }
       }
   }
+  async gotoTandC(event,btn,tel){
+    const modal= await this.modlctrl.create({
+      component:TandcModalComponent,
+      cssClass:'tandc-modal-Class',
+      backdropDismiss: false,
+      showBackdrop: true
+    })
+     modal.onDidDismiss().then(res =>{
+      if(res && res['data']){
+        this.registerUser(event,btn,tel);
+      }
+      else{
+        this.btn.nativeElement.disabled=false;
+        this.globalService.showToast('Please accept term and Condition to continue',1000,'bottom');
+        console.log(this.btn.nativeElement);
+      }
+     })
+    modal.present();
+  }
 
+ async  registerUser(event,btn,mobile?){
+
+    const msg="coming soon";
+    event.target.disabled=true;
+    await this.loaderService.showLoading(msg);
+    const user={
+      mobile:mobile.value,
+    };
+
+    this.router.navigate(['login']);
+    this.loaderService.unloadData();
+
+
+  }
 }
