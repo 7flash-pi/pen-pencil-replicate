@@ -23,6 +23,7 @@ export class LoggedInService {
       let redirectPath='home';
       this.navController.navigateRoot(redirectPath).then( () =>{
         this.loader.unloadData();
+
       })
 
       this.globalService.showToast('Logged In SuccessFully',1000,'bottom');

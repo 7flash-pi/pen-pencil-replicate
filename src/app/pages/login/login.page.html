@@ -18,16 +18,15 @@
         <ion-item class="ion-margin-top box" lines="none" >
           <ion-input type="tel" placeholder="Mobile Number" required
           name="phoneNumber" maxlength="10" minlength="10"
-          formControlName="mobile" (keyup)="checkphoneNumber($event)" class="ion-padding"></ion-input>
+          formControlName="mobile" (keyup)="checkphoneNumber($event)" class="ion-padding" aria-label="Mobile number"></ion-input>
         </ion-item>
 
         <ion-item class="ion-margin-top box" lines="none">
           <ion-input [type]=" !showpass ? 'password' :'text' "  placeholder="Password" required
-          name="password" mixlength="6" formControlName="password" class="ion-padding"></ion-input>
+          name="password" minlength="6" formControlName="password" class="ion-padding" aria-label="password"></ion-input>
         </ion-item>
-        <ion-item lines="none" class="ion-margin-start ion-margin-top " style="width:auto">
-          <ion-checkbox   labelPlacement="start" (ionChange) ="showpass=!showpass " [checked]=" showpass== true "></ion-checkbox>
-          <ion-label class="ion-padding-start">Show Password</ion-label>
+        <ion-item lines="none" class="ion-margin-top ion-text-left">
+          <ion-checkbox labelPlacement="end" (ionChange) ="showpass=!showpass" [checked]="showpass== true" aria-label="show Password" > Show password</ion-checkbox>
         </ion-item >
       </form>
       <ion-button #btn  shape="round" color="danger" expand="block" class="login-btn ion-margin-top" (click)=" btn.disables = true;  gotoTandC( $event , btn)"> Login </ion-button>
@@ -37,7 +36,7 @@
 </ion-content>
 
 <ion-footer class="ion-no-border">
-  <ion-toolbar class="ion-text-center ion-tappable">
+  <ion-toolbar class="ion-text-center">
     <ion-row>
       <ion-col class="ion-tappable" size="12">
           <ion-text (click)="gotosignup()">Don't have an account? <span>Sign Up</span></ion-text>

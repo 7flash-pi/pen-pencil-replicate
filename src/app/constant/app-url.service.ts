@@ -30,6 +30,7 @@ export class AppUrlService {
     return this.APP_URL_V1 + 'oauth/token';
   }
 
+
   //notification
   public get GET_NOTIFICATION() {
     return this.APP_URL_V1 + 'notification';
@@ -48,6 +49,9 @@ export class AppUrlService {
   public get LOGOUT() {
     return this.APP_URL_V1 + 'oauth/logout';
   }
+  public get SELF() {
+    return this.APP_URL_V1 + `users/self`;
+}
 
 
 }

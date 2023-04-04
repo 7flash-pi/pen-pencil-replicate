@@ -14,7 +14,7 @@ import { NotificationModal } from 'src/app/provider/base/base.model';
 export class NotificationsPage implements OnInit{
 
   notificationList:Array<NotificationModal>=[];
-  unReadMessage=0;
+  unreadMessage=0;
   processing:boolean=true;
   totalCount:number;
   pageNo=1;
@@ -58,6 +58,17 @@ export class NotificationsPage implements OnInit{
               };
               data.push(obj);
           }
+          if (data.length) {
+            this.unreadMessage = data.length;
+        }
+        if (event) {
+            setTimeout(() => {
+                event.target.complete();
+                if (this.notificationList.length >= this.totalCount) {
+                    event.target.disabled = true;
+                }
+            }, 500);
+        }
       });
     }
    catch(err){
@@ -93,6 +104,20 @@ async loadMore(event){
 
 }
 
+markRead(data:Array<NotificationModal>){
+  const notificationIds=[];
+  data.forEach( item => {
+    if(item && !item['isRead']){
+      item['isRead']=true;
+      notificationIds.push(item._id);
+    }
+  });
+
+  this.unreadMessage=0;
+  this.notificationService.readNotifications({notificationIds}).subscribe();
+
+
+}
 
 
 

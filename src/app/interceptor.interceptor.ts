@@ -51,7 +51,7 @@ export class InterceptorService implements HttpInterceptor {
   }
 
   async logoutUser(){
-    const deviceId=this.storageService.getDeviceId();
+    const deviceId=await this.storageService.getDeviceId();
     if(this.globalService.isLoggedIn === true){
       this.authService.logoutUser(deviceId).subscribe();
       this.globalService.isLoggedIn = false;

@@ -119,6 +119,8 @@ export class LoginPage implements OnInit ,OnDestroy {
               }
             }
         catch (err) {
+            this.gs.showToast('User does not exist' ,2000 ,'bottom');
+            this.loading.unloadData();
             console.log(err.message)
         }
         finally {
