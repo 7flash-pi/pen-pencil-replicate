@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { NotificationService } from 'src/app/provider/notif/notification.service';
 import { LoadingService } from 'src/app/provider/loading/loading.service';
 import { GlobalService } from 'src/app/provider/global-services/global.service';
-import { Platform } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { NotificationModal } from 'src/app/provider/base/base.model';
+
 
 @Component({
   selector: 'app-notifications',
@@ -22,7 +22,8 @@ export class NotificationsPage implements OnInit{
   constructor(
     private notificationService:NotificationService,
     private globalService:GlobalService,
-    private loaderService:LoadingService
+    private loaderService:LoadingService,
+    private router:Router
   ) { }
 
   ngOnInit() {
@@ -63,13 +64,34 @@ export class NotificationsPage implements OnInit{
     console.log(err.message);
 
    }
+}
 
-
-
-
-
-
+toNotificationPath(notification:NotificationModal){
+if(notification && notification.campaignId && notification.campaignId.page !== '0'){
+    this.router.navigateByUrl('home');
   }
+  else if( notification.campaignId.actionType !== 'NO_ACTION'){
+    this.getMetaData(notification);
+  }
+  else{
+    this.globalService.showToast("No Action Found",1000,'bottom');
+  }
+
+}
+getMetaData(item: NotificationModal) {
+  if (item.campaignId.actionType === 'OPEN_LINK') {
+      window.open(item.campaignId.metaData.link, '_system');
+      return;
+  }
+  this.router.navigateByUrl('/tabs/tabs/dashboard-tab');
+}
+
+async loadMore(event){
+
+  this.pageNo++;
+  await this.getNotification(this.pageNo,event);
+
+}
 
 
 
