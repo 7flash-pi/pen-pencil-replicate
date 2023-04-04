@@ -69,12 +69,12 @@ ion-button{
 
 .tandc-modal-Class{
   .modal-wrapper{
-    height: 40%;
-    width: 90%;
+    --width: fit-content;
+    --min-width: 250px;
+    --height: fit-content;
     border-radius: 15px;
     ---background:#fff;
-    transform: translate3d(0,40px,0);
-    opacity: .01;
+    --box-shadow: 0 28px 48px rgba(0, 0, 0, 0.4);
 
   }
 
@@ -88,5 +88,9 @@ ion-button{
 
 }
 
-
+.login-img{
+  width: 80%;
+  max-width: 290px;
+  max-height: 290px;
+}
 

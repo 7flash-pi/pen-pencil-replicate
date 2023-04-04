@@ -1,26 +1,38 @@
-<ion-header>
-  <ion-toolbar class="ion-no-border">
-    <ion-buttons slot="start">
-          <ion-back-button text="Back" icon="chevron-back-outline" type="dark" color="dark" defaultHref="login"></ion-back-button>
-    </ion-buttons>
-
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <app-back-button btnIcon="arrow-back-outline" defaultHref="login"></app-back-button>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <div class="signup-content">
-    <ion-img src="assets/auth/login_top.png" class="ion-margin-horizontal ion-padding"></ion-img>
-    <ion-text class="ion-margin-top" style="color:#E72229;"> Welcome to Nursing Next Live!</ion-text>
-    <ion-label>Login to your exisitng account of NN Live</ion-label>
-    </div>
-    <section>
-      <form>
-        <ion-item class="ion-margin-top box" lines="none" >
-          <ion-input type="tel" placeholder="Sign up with Phone Number" required></ion-input>
-        </ion-item>
-      </form>
+<ion-content  >
+  <div class="login-content">
+    <section class="align-center web-view">
+      <ion-img src="assets/auth/login_top.png" class="ion-margin-horizontal ion-padding login-img "></ion-img>
+      <ion-text class="ion-text-center" style="color:#E72229;"> Welcome to Nursing Next Live!</ion-text>
+      <ion-label>Login to your exisitng account of NN Live</ion-label>
+      <ion-text class="ion-text-center ion-margin-top" style="font-size: 18px ; font-weight:700;">Sign Up</ion-text>
     </section>
 
-    <ion-button shape="round" class="signup-btn" disabled>Next</ion-button>
+    <section class="loginSection web-view ">
+      <form  autocomplete="off"  >
 
+        <ion-item class="ion-margin-vertical box" lines="none" >
+          <ion-input type="tel" placeholder="Sign up with mobile number" required
+          maxlength="10" minlength="10" class="ion-padding"  name="phoneNumber" [(ngModel)]="mobileNumber"></ion-input>
+        </ion-item>
+      </form>
+      <ion-button #btn  shape="round" color="danger" expand="block" class="login-btn ion-margin-top" disabled="true">Next </ion-button>
+    </section>
+  </div>
 </ion-content>
+
+<ion-footer class="ion-no-border">
+  <ion-toolbar class="ion-text-center ion-tappable">
+    <ion-row>
+      <ion-col class="ion-tappable" size="12">
+          <ion-text (click)="gotoLogin()">Already have an Account? <span>Login</span></ion-text>
+      </ion-col>
+  </ion-row>
+  </ion-toolbar>
+</ion-footer>
+
