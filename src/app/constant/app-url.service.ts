@@ -53,5 +53,8 @@ export class AppUrlService {
     return this.APP_URL_V1 + `users/self`;
 }
 
+  public get ORDERS() {
+    return this.APP_URL_V1 + `orders`;
+  }
 
 }

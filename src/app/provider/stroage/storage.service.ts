@@ -66,5 +66,7 @@ export class StorageService {
   getData(key) {
       return this.storage.get(key);
   }
+
+
 }
 

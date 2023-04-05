@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { GlobalService } from './provider/global-services/global.service';
 import { Subscription } from 'rxjs';
@@ -11,10 +11,10 @@ register();
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy{
   public appPages = [
     { title: 'Smart digital library', url: 'sdl', img: 'assets/icons/sdl.png' },
-    { title: 'My Package', url: 'pages/home', img: 'assets/cbs-nn/hamburger/my_package.svg' },
+    { title: 'My Package', url: 'my-package', img: 'assets/cbs-nn/hamburger/my_package.svg' },
     { title: 'Guidance and Counseling', url: 'guidance', img: 'assets/cbs-nn/hamburger/planet.svg' },
     { title: 'Success Stories', url: '#', img: 'assets/cbs-nn/hamburger/microphone.svg' },
     { title: 'Scholarship Test (NSA/MAT/SAT)', url: '#', img: 'assets/icons/test.png' },
@@ -52,13 +52,18 @@ export class AppComponent implements OnInit {
     private authService:AuthService) {
       this.doTokenExist();
     }
+  ngOnDestroy(): void {
+    if(this.userSub){
+      this.userSub.unsubscribe();
+    }
+  }
 
   ngOnInit(): void {
     this.getUserInfo();
   }
 
   gotomypackage(){
-    this.router.navigate(['home']);
+    this.router.navigate(['my-package']);
   }
 
   gotosmd(){

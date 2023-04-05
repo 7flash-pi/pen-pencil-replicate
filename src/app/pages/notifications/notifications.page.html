@@ -6,7 +6,7 @@
 
 <ion-content>
 
-  <section class="no-notification" *ngIf="notificationList.length === 0">
+  <section class="no-notification" *ngIf=" notificationList.length === 0 ">
     <ion-row>
       <ion-col>
         <ion-text>You dont have any notifications yet!</ion-text>
@@ -20,18 +20,18 @@
 
         <ion-col>
           <ion-item lines="none">
-            <ion-text class="notification-card-header">{{notification.title}}</ion-text>
+            <ion-text class="notification-card-header">{{notification?.title}}</ion-text>
           </ion-item>
         </ion-col>
     <ion-grid>
       <ion-row>
         <ion-col class="mid">
-          <ion-text class="notification-card-subtitle">{{notification.text}}</ion-text>
+          <ion-text class="notification-card-subtitle">{{notification?.text}}</ion-text>
         </ion-col>
       </ion-row>
       <ion-row class="ion-margin-top">
         <ion-col class=" ion-no-padding">
-          <ion-text class="notification-card-date">{{notification.createdAt | date: 'mediumDate'}}</ion-text>
+          <ion-text class="notification-card-date">{{notification?.createdAt | date: 'mediumDate'}}</ion-text>
         </ion-col>
 
         <div>
