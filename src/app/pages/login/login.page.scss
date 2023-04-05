@@ -1,19 +1,4 @@
 
-.login-content{
-  margin: 0 10%;
-  ion-text{
-    font-size: 18px;
-    font-weight: 800;
-    letter-spacing: 0.2px;
-    text-overflow: initial;
-  }
-  ion-button{
-    align-items: center;
-    margin: 0 auto;
-    height: 3rem;;
-    --background: var(--btn-bg);
-  }
-}
 ion-input{
   text-align: center;
   --background:#fff;
@@ -22,7 +7,6 @@ ion-input{
 }
 .box{
   box-shadow: 0px 2px 5px 3px #ececec;
-
   border-radius: 7px;
 }
 
@@ -36,21 +20,17 @@ ion-input{
   @media (max-width: 320px) {
     padding-top: 14px;
   }
-  .sub-title {
-    color: #000;
-  }
   ion-checkbox{
     --size:18px;
+    justify-content: flex-end;
   }
-  p{
-    font-size: 14px;
-    font-weight: 500;
-  }
+
 }
 p{
   font-size: 16px;
   font-weight: 600;
 }
+
 
 
 ion-footer{
@@ -64,7 +44,5 @@ ion-footer{
     }
   }
 }
-.checkbox-wrapper{
-  justify-content: flex-end;
-}
+
 

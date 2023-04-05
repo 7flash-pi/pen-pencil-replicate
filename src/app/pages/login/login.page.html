@@ -25,8 +25,9 @@
           <ion-input [type]=" !showpass ? 'password' :'text' "  placeholder="Password" required
           name="password" minlength="6" formControlName="password" class="ion-padding" aria-label="password"></ion-input>
         </ion-item>
-        <ion-item lines="none" class="ion-margin-top ion-text-left">
-          <ion-checkbox labelPlacement="end" (ionChange) ="showpass=!showpass" [checked]="showpass== true" aria-label="show Password" > Show password</ion-checkbox>
+        <ion-item lines="none" class="ion-margin-top">
+          <ion-checkbox slot="start" labelPlacement="end" (ionChange) ="showpass=!showpass" [checked]="showpass== true" aria-label="show Password"
+          style="--checkbox-background-checked:#000;" > Show password</ion-checkbox>
         </ion-item >
       </form>
       <ion-button #btn  shape="round" color="danger" expand="block" class="login-btn ion-margin-top" (click)=" btn.disables = true;  gotoTandC( $event , btn)"> Login </ion-button>

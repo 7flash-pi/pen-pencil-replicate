@@ -56,7 +56,7 @@ export class GlobalService {
     return;
   }
 
-  getAccessToken(){
+  getAccessToken():BehaviorSubject<string>{
     return this._accessToken$;
   }
 

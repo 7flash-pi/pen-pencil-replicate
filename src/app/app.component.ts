@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { GlobalService } from './provider/global-services/global.service';
 import { Subscription } from 'rxjs';
 import { register } from 'swiper/element/bundle';
+import { AuthService } from './provider/auth-Service/auth.service';
 
 register();
 @Component({
@@ -34,13 +35,23 @@ export class AppComponent implements OnInit {
 
   ];
 
+
   userInfo:any;
   userSub:Subscription;
+  tokenSub:Subscription;
+  self() {
+    this.authService.self().subscribe(
+
+    );
+  }
 
 
   nightMode:boolean=false;
   constructor(private router:Router,
-    private globalService:GlobalService) {}
+    private globalService:GlobalService,
+    private authService:AuthService) {
+      this.doTokenExist();
+    }
 
   ngOnInit(): void {
     this.getUserInfo();
@@ -60,5 +71,20 @@ export class AppComponent implements OnInit {
       this.userInfo=user;
       }
     })
+  }
+
+  doTokenExist(){
+   this.globalService.getAccessToken().subscribe(
+      token => {
+        if(token){
+          this.self();
+
+        }
+      }, err =>{
+        this.globalService.isLoggedIn=false;
+        console.log("no token");
+      }
+    )
+
   }
 }

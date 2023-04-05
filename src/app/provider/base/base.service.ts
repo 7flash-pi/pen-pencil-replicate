@@ -1,4 +1,4 @@
-import { from } from "rxjs/internal/observable/from";
+import { from } from "rxjs";
 import { retry, tap } from "rxjs/operators";
 
 
@@ -20,10 +20,12 @@ export class BaseService {
         }
         return true;
     }
-    isHasValue(url) {
+
+  isHasValue(url) {
       const data = this.storageService.getLocalData(url);
       return !!data;
   }
+
   getFromLocal(url) {
     return from(this.storageService.getData(url)).pipe(
         tap(
@@ -55,10 +57,12 @@ setFromServer(url){
   this.httpClient.get(url).subscribe(
     res => {
         this.setStorageValue(url, res);
-    }
-);
+      }
+    );
+
+  }
 
 }
 
-}
+
 

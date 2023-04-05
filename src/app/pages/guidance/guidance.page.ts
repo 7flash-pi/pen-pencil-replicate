@@ -11,7 +11,7 @@ export class GuidancePage implements OnInit {
 
   public btnIcon="arrow-back-outline";
   defaultHref="home";
-  openCard:boolean=false;
+  openCard:boolean=true;
   openBlog:boolean=false;
 
   constructor(private router:Router,

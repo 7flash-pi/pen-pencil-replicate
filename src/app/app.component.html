@@ -30,11 +30,11 @@
           <ion-item lines="none" class="mode-toggle">
             <ion-icon name="invert-mode" slot="start" style="--color:var(--appPrimary);"></ion-icon>
             <ion-label class="ion-text-center">Night Mode</ion-label>
-            <ion-toggle slot="end" [checked]="true" style=" --background: #fff;
+            <ion-toggle slot="end" [checked]="true" style="
             --background-checked: var(--appPrimary);
-            --handle-background: #fff;
-            --handle-background-checked:  var(--appPrimary)"
-            (click)=" nightMode = !nightMode"></ion-toggle>
+            --track-background: #fff;
+            --track-background-checked:  var(--appPrimary)"
+            (click)=" nightMode = !nightMode"  aria-label="nightMode" ></ion-toggle>
           </ion-item>
 
 

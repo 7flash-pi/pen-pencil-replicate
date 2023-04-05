@@ -50,5 +50,21 @@ export class StorageService {
     this._storage.clear();
     localStorage.clear();
   }
+
+  setLocalData(key, value) {
+    return localStorage.setItem(key, value);
+  }
+
+  getLocalData(key) {
+      return localStorage.getItem(key);
+  }
+  setData(key, value) {
+    this.setLocalData(key, true);
+    return this.storage.set(key, value);
+}
+
+  getData(key) {
+      return this.storage.get(key);
+  }
 }
 
