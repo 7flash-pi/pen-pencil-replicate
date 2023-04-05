@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { GlobalService } from 'src/app/provider/global-services/global.service';
 import { Subscription } from 'rxjs';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-home',
@@ -12,14 +13,15 @@ export class HomePage implements OnInit,OnDestroy {
   userInfo:any;
   userSub:Subscription;
 
-  constructor(private globalService:GlobalService) { }
+  constructor(private globalService:GlobalService,
+    private router:Router) { }
   ngOnDestroy(): void {
     this.userSub.unsubscribe();
   }
 
   ngOnInit() {
     this.getUserInfo();
-    console.log(this.userInfo)
+    this.router.onSameUrlNavigation = 'reload';
   }
 
   getUserInfo(){

@@ -9,7 +9,7 @@ import { LoadingService } from 'src/app/provider/loading/loading.service';
 import { LoggedInService } from 'src/app/provider/afterLogin/logged-in.service';
 import  { LoginService } from 'src/app/provider/login/login.service';
 import { MenuController } from '@ionic/angular';
-
+import { lastValueFrom } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -113,7 +113,7 @@ export class LoginPage implements OnInit ,OnDestroy {
         await this.loading.showLoading('Logging In.Please Wait...');
 
         try{
-              const res=await this._login.login(this.loginForm.value).toPromise();
+              const res=await lastValueFrom(this._login.login(this.loginForm.value));
               if(res){
                 await this.afterLogin.afterLoginProcess(res);
               }
