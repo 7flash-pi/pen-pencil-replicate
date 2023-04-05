@@ -13,6 +13,7 @@ export class GlobalService {
   public isLoggedIn:boolean=false;
   public accessToken;
   public homeData:any;
+  public isOfflineMode=true;
   private _accessToken$: BehaviorSubject<string> = new BehaviorSubject<string>(null);
   public _user$: BehaviorSubject<any> = new BehaviorSubject<any>(null);
   public _isUserMenuDisabled$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
@@ -55,7 +56,7 @@ export class GlobalService {
     return;
   }
 
-  getAccessToken(){
+  getAccessToken():BehaviorSubject<string>{
     return this._accessToken$;
   }
 

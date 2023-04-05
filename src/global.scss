@@ -93,4 +93,10 @@ ion-button{
   max-width: 290px;
   max-height: 290px;
 }
+.bg{
+  --background:var(--apptxt);
+  --color:#fff;
+  border-bottom-right-radius: 50px;
+  padding: 18px 0;
+}
 

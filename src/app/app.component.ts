@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { GlobalService } from './provider/global-services/global.service';
 import { Subscription } from 'rxjs';
 import { register } from 'swiper/element/bundle';
+import { AuthService } from './provider/auth-Service/auth.service';
 
 register();
 @Component({
@@ -10,10 +11,10 @@ register();
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy{
   public appPages = [
     { title: 'Smart digital library', url: 'sdl', img: 'assets/icons/sdl.png' },
-    { title: 'My Package', url: 'pages/home', img: 'assets/cbs-nn/hamburger/my_package.svg' },
+    { title: 'My Package', url: 'my-package', img: 'assets/cbs-nn/hamburger/my_package.svg' },
     { title: 'Guidance and Counseling', url: 'guidance', img: 'assets/cbs-nn/hamburger/planet.svg' },
     { title: 'Success Stories', url: '#', img: 'assets/cbs-nn/hamburger/microphone.svg' },
     { title: 'Scholarship Test (NSA/MAT/SAT)', url: '#', img: 'assets/icons/test.png' },
@@ -34,20 +35,35 @@ export class AppComponent implements OnInit {
 
   ];
 
+
   userInfo:any;
   userSub:Subscription;
+  tokenSub:Subscription;
+  self() {
+    this.authService.self().subscribe(
+
+    );
+  }
 
 
   nightMode:boolean=false;
   constructor(private router:Router,
-    private globalService:GlobalService) {}
+    private globalService:GlobalService,
+    private authService:AuthService) {
+      this.doTokenExist();
+    }
+  ngOnDestroy(): void {
+    if(this.userSub){
+      this.userSub.unsubscribe();
+    }
+  }
 
   ngOnInit(): void {
     this.getUserInfo();
   }
 
   gotomypackage(){
-    this.router.navigate(['home']);
+    this.router.navigate(['my-package']);
   }
 
   gotosmd(){
@@ -60,5 +76,20 @@ export class AppComponent implements OnInit {
       this.userInfo=user;
       }
     })
+  }
+
+  doTokenExist(){
+   this.globalService.getAccessToken().subscribe(
+      token => {
+        if(token){
+          this.self();
+
+        }
+      }, err =>{
+        this.globalService.isLoggedIn=false;
+        console.log("no token");
+      }
+    )
+
   }
 }

@@ -1,0 +1,22 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="bg ion-padding-vertical">
+    <app-back-button btnIcon="arrow-back-outline" btnText="My Package" defaultHref="home"></app-back-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <section class="plan-section">
+
+    <ion-row>
+      <ion-col>
+        <ion-card class="ion-margin plan-card"  *ngFor=" let plan of plans ">
+          <ion-img class="plan-img" src="assets/cbs-nn/pro_plans/plan_active.svg"></ion-img>
+          <ion-text style="font-weight: 600; font-size: 14px;">{{ plan.orderDetails.name}}</ion-text>
+          <p>Complimentary({{plan.orderDetails.remainingDays > 0 ? plan.orderDetails.remainingDays + ' Days left' : 'Expired'}})</p>
+        </ion-card>
+
+      </ion-col>
+    </ion-row>
+  </section>
+
+</ion-content>

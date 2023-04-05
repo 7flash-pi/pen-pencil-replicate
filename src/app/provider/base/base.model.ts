@@ -81,3 +81,67 @@ export class FileModal {
   }
 
 }
+
+export class PlanModal {
+  orderDetails: OrderDetailModal;
+  paymentSource: string;
+  price: number;
+  createdAt: string;
+  id: string;
+
+  constructor(plan) {
+      this.id = plan._id || '';
+      this.createdAt = plan.createdAt || '';
+      this.price = plan.price || 0;
+      this.paymentSource = plan.paymentSource || '';
+      this.orderDetails = new OrderDetailModal(plan.orderDetails[0]);
+  }
+}
+
+export class OrderDetailModal {
+  expireAt: string;
+  startAt: string;
+  expiryDuration: number;
+  name: string;
+  quantity: number;
+  remainingDays: number;
+  wallet: number;
+  id: string;
+  description: string;
+  type: string;
+  createdAt: string;
+  package: PackageModal;
+
+  constructor(orderDetail) {
+      this.type = orderDetail.type || '';
+
+      this.createdAt = orderDetail.createdAt;
+      if (this.type !== '') {
+          this.package = new PackageModal(orderDetail[(orderDetail.type === 'TEST_CATEGORY') ? 'testCategory' : orderDetail.type.toLowerCase()]);
+      } else {
+          this.package = new PackageModal({});
+      }
+
+      this.expireAt = orderDetail.expireAt || '';
+      this.startAt = orderDetail.startAt || '';
+      this.expiryDuration = orderDetail.expireDuration || 0;
+      this.name = orderDetail.name || '';
+      this.quantity = orderDetail.quantity || 0;
+      this.remainingDays = orderDetail.remainingDays || 0;
+      this.wallet = orderDetail.wallet || 0;
+      this.id = orderDetail._id || '';
+      this.description = orderDetail.description || '';
+  }
+}
+
+export class PackageModal {
+  id: string;
+  expiryDuration: any;
+  programId: string;
+
+  constructor(item) {
+      this.programId = item.program || '';
+      this.id = item._id || '';
+      this.expiryDuration = item.expiryDuration || '-1';
+  }
+}

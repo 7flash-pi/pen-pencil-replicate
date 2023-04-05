@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { BaseService } from '../base/base.service';
 import { retry,tap } from 'rxjs/operators';
+import { StorageService } from '../stroage/storage.service';
 
 @Injectable({
   providedIn: 'root'
@@ -14,9 +15,10 @@ export class NotificationService extends BaseService{
     constructor(
     private appUrl:AppUrlService,
     private globalService:GlobalService,
-    public httpClient:HttpClient
+    public httpClient:HttpClient,
+    public storageService:StorageService
   ) {
-    super(httpClient);
+    super(httpClient,storageService);
   }
 
   getNotification(query?){
