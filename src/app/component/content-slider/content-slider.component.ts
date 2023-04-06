@@ -67,9 +67,9 @@ async getSliders(res) {
   }
 }
 async openFromSlider(item: BannerModal) {
-  console.log(item);
 
   await this.globalService.openFromSliderMain(item);
+  console.log(item);
 }
 
 
