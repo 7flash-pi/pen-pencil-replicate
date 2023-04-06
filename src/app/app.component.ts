@@ -41,9 +41,12 @@ export class AppComponent implements OnInit, OnDestroy{
   tokenSub:Subscription;
   self() {
     this.authService.self().subscribe(
-
+      res => {
+        this.goAhead(res['data']);
+      }
     );
   }
+
 
 
   nightMode:boolean=false;
@@ -92,4 +95,8 @@ export class AppComponent implements OnInit, OnDestroy{
     )
 
   }
+
+  async goAhead(user) {
+    await this.globalService.setUser(user);
+}
 }

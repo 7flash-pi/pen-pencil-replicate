@@ -68,9 +68,7 @@ export class GlobalService {
   getUser(){
     return this._user$;
   }
-  getUserMenu() {
-    return this._isUserMenuDisabled$;
-}
+
 
 
 setUserMenuDisabled(value) {

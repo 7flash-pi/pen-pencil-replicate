@@ -1,5 +1,4 @@
 ion-content{
-  width: 90vw;
   text-align: center;
   ion-row{
     ion-text{
@@ -17,13 +16,33 @@ ion-content{
       ion-radio{
         --color-checked:#000;
       }
-      ion-item{
-        --background:#DFF7D1;
-        --border-radius: 15px;
+      // ion-item{
+      //   --background:#DFF7D1;
+      //   --border-radius: 15px;
 
-      }
+      // }
     }
 
+
+    ion-card{
+      display: flex;
+      margin-top: 2em;
+      border-radius: 15px;
+      ion-img{
+        flex: 1;
+        margin-left: 2em;
+      }
+
+      p{
+
+        margin-right: 2em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+    }
   }
+
 
 }
