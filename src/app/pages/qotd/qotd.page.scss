@@ -1,0 +1,29 @@
+ion-content{
+  width: 90vw;
+  text-align: center;
+  ion-row{
+    ion-text{
+      font-size: 18px;
+      font-weight: 600;
+      --color:var(--appTxt);
+      text-transform: capitalize;
+    }
+    p{
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 20px;
+    }
+    ion-radio-group{
+      ion-radio{
+        --color-checked:#000;
+      }
+      ion-item{
+        --background:#DFF7D1;
+        --border-radius: 15px;
+
+      }
+    }
+
+  }
+
+}

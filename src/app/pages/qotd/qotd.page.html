@@ -1,0 +1,35 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="bg" style="--background:#d1d1d1 !important; --color:var(--appTxt)">
+    <app-back-button btnIcon="arrow-back-outline" btnText="Daily dose of knowledge" defaultHref="home"></app-back-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row class="ion-margin-top">
+      <ion-item>
+        <ion-col>
+          <ion-text>questions of the day</ion-text>
+          <p>Most important nursing action while caring for a client after cardiac catheterization? (MSN)</p>
+        </ion-col>
+      </ion-item>
+      <ion-col>
+        <ion-radio-group (ionFocus)="correctAns = true;">
+          <ion-item>
+            <ion-radio value="1" labelPlacement="end" justify="start">Provide Rest</ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-radio value="2"labelPlacement="end" justify="start">Lorem, ipsum dolor.</ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-radio value="3"labelPlacement="end" justify="start">Lorem ipsum dolor sit amet.</ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-radio value="4"labelPlacement="end" justify="start">Lorem ipsum dolor sit amet.</ion-radio>
+          </ion-item>
+        </ion-radio-group>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
