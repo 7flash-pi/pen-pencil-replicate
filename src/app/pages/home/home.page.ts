@@ -30,7 +30,10 @@ export class HomePage implements OnInit,OnDestroy {
         this.userInfo = user;
       }
     });
+  }
 
+  goToQOTD(){
+    this.router.navigate(['qotd']);
   }
 
 

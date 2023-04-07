@@ -41,7 +41,7 @@
         <!--Main List Menu-->
         <ion-list id="inbox-list" class="ion-margin-horizontal list-menu">
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
-            <ion-item  routerLink={{p.url}} detail="false" >
+            <ion-item  (click)="goto(p)" detail="false" >
               <ion-img src={{p.img}} class="ion-margin-end"> </ion-img>
               <ion-label>{{ p.title }}</ion-label>
               <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>

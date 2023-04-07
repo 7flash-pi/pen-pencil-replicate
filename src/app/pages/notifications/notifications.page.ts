@@ -4,6 +4,7 @@ import { LoadingService } from 'src/app/provider/loading/loading.service';
 import { GlobalService } from 'src/app/provider/global-services/global.service';
 import { Router } from '@angular/router';
 import { NotificationModal } from 'src/app/provider/base/base.model';
+import { lastValueFrom } from 'rxjs';
 
 
 @Component({
@@ -40,14 +41,13 @@ export class NotificationsPage implements OnInit{
       this.processing=true;
 
     }
-    try{
-      const res= await this.notificationService.getNotification(query).toPromise()
-      const notifications=[];
-      res['data'].forEach(item => {
-        notifications.push(new NotificationModal(item));
-      });
 
-      this.notificationList=this.notificationList.concat(notifications);
+    //removed toPromise and used lastvalueFrom();
+    try{
+      const res= await lastValueFrom(this.notificationService.getNotification(query));
+      if(res['data']){
+        this.notificationList=res['data'].map( item => new NotificationModal(item));
+      }
       this.totalCount = res['paginate'].totalCount;
       console.log(this.totalCount);
       const data = [];

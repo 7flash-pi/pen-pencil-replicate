@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { RenewalPlanComponent } from './renewal-plan.component';
+import { QotdPage } from './qotd.page';
 
-describe('RenewalPlanComponent', () => {
-  let component: RenewalPlanComponent;
-  let fixture: ComponentFixture<RenewalPlanComponent>;
+describe('QotdPage', () => {
+  let component: QotdPage;
+  let fixture: ComponentFixture<QotdPage>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ RenewalPlanComponent ],
+      declarations: [ QotdPage ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(RenewalPlanComponent);
+    fixture = TestBed.createComponent(QotdPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

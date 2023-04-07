@@ -49,6 +49,10 @@ const routes: Routes = [
     path: 'my-package',
     loadChildren: () => import('./pages/my-package/my-package.module').then( m => m.MyPackagePageModule)
   },
+  {
+    path: 'qotd',
+    loadChildren: () => import('./pages/qotd/qotd.module').then( m => m.QotdPageModule)
+  },
 ];
 
 @NgModule({
