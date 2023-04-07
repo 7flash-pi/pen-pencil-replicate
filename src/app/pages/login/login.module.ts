@@ -17,7 +17,8 @@ import { TandcModalComponent } from 'src/app/component/tandc-modal/tandc-modal.c
     ReactiveFormsModule,
     IonicModule,
     LoginPageRoutingModule,
+    TandcModalComponent
   ],
-  declarations: [LoginPage,TandcModalComponent]
+  declarations: [LoginPage]
 })
 export class LoginPageModule {}
