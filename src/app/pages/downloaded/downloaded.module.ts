@@ -7,7 +7,8 @@ import { IonicModule } from '@ionic/angular';
 import { DownloadedPageRoutingModule } from './downloaded-routing.module';
 
 import { DownloadedPage } from './downloaded.page';
-import { SharedModule } from 'src/app/component/shared.module';
+import { BackButtonComponent } from 'src/app/component/back-button/back-button.component';
+
 
 @NgModule({
   imports: [
@@ -15,7 +16,7 @@ import { SharedModule } from 'src/app/component/shared.module';
     FormsModule,
     IonicModule,
     DownloadedPageRoutingModule,
-    SharedModule
+    BackButtonComponent
   ],
   declarations: [DownloadedPage]
 })

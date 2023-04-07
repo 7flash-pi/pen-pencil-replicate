@@ -22,9 +22,10 @@ import { SharedModule } from 'src/app/component/shared.module';
     FormsModule,
     IonicModule,
     HomePageRoutingModule,
-    SharedModule
+    SharedModule,
+    ContentSliderComponent
   ],
-  declarations: [HomePage,HomeContentComponent,ContentSliderComponent],
+  declarations: [HomePage,HomeContentComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 
 })

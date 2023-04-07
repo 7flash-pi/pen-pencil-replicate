@@ -8,6 +8,7 @@ import { SharedModule } from 'src/app/component/shared.module';
 import { MyPackagePageRoutingModule } from './my-package-routing.module';
 
 import { MyPackagePage } from './my-package.page';
+import { BackButtonComponent } from 'src/app/component/back-button/back-button.component';
 
 @NgModule({
   imports: [
@@ -15,7 +16,7 @@ import { MyPackagePage } from './my-package.page';
     FormsModule,
     IonicModule,
     MyPackagePageRoutingModule,
-    SharedModule
+    BackButtonComponent
   ],
   declarations: [MyPackagePage]
 })

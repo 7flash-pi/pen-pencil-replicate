@@ -8,6 +8,7 @@ import { SharedModule } from 'src/app/component/shared.module';
 import { AppToursPageRoutingModule } from './app-tours-routing.module';
 
 import { AppToursPage } from './app-tours.page';
+import { BackButtonComponent } from 'src/app/component/back-button/back-button.component';
 
 @NgModule({
   imports: [
@@ -15,7 +16,7 @@ import { AppToursPage } from './app-tours.page';
     FormsModule,
     IonicModule,
     AppToursPageRoutingModule,
-    SharedModule
+    BackButtonComponent
   ],
   declarations: [AppToursPage]
 })

@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { UserCardComponent } from './user-card.component';
+import { AboutLatestVersionPage } from './about-latest-version.page';
 
-describe('UserCardComponent', () => {
-  let component: UserCardComponent;
-  let fixture: ComponentFixture<UserCardComponent>;
+describe('AboutLatestVersionPage', () => {
+  let component: AboutLatestVersionPage;
+  let fixture: ComponentFixture<AboutLatestVersionPage>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ UserCardComponent ],
+      declarations: [ AboutLatestVersionPage ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(UserCardComponent);
+    fixture = TestBed.createComponent(AboutLatestVersionPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

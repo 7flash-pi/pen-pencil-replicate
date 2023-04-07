@@ -7,7 +7,8 @@ import { IonicModule } from '@ionic/angular';
 import { SignupPageRoutingModule } from './signup-routing.module';
 
 import { SignupPage } from './signup.page';
-import { SharedModule } from 'src/app/component/shared.module';
+import { BackButtonComponent } from 'src/app/component/back-button/back-button.component';
+
 
 @NgModule({
   imports: [
@@ -15,8 +16,8 @@ import { SharedModule } from 'src/app/component/shared.module';
     FormsModule,
     IonicModule,
     SignupPageRoutingModule,
-    SharedModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BackButtonComponent
   ],
   declarations: [SignupPage]
 })

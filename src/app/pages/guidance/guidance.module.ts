@@ -9,8 +9,8 @@ import { GuidancePageRoutingModule } from './guidance-routing.module';
 import { GuidancePage } from './guidance.page';
 import { GuidanceCardComponent } from 'src/app/component/guidance-card/guidance-card.component';
 import { BlogCardComponent } from 'src/app/component/blog-card/blog-card.component';
-import { BlogDetailComponent } from 'src/app/component/blog-detail/blog-detail.component';
-import { SharedModule } from 'src/app/component/shared.module';
+
+import { BackButtonComponent } from 'src/app/component/back-button/back-button.component';
 
 
 
@@ -20,12 +20,14 @@ import { SharedModule } from 'src/app/component/shared.module';
     FormsModule,
     IonicModule,
     GuidancePageRoutingModule,
-    SharedModule
+
+    BlogCardComponent,
+    GuidanceCardComponent,
+    BackButtonComponent
 
   ],
   declarations: [ GuidancePage,
-                  GuidanceCardComponent,
-                  BlogCardComponent,
+
               ]
 })
 export class GuidancePageModule {}
