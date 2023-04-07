@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { AboutLatestVersionPageRoutingModule } from './about-latest-version-routing.module';
 
 import { AboutLatestVersionPage } from './about-latest-version.page';
-import { SharedModule } from 'src/app/component/shared.module';
+
 
 @NgModule({
   imports: [
@@ -15,7 +15,6 @@ import { SharedModule } from 'src/app/component/shared.module';
     FormsModule,
     IonicModule,
     AboutLatestVersionPageRoutingModule,
-    SharedModule
   ],
   declarations: [AboutLatestVersionPage]
 })

@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { NotificationsPageRoutingModule } from './notifications-routing.module';
 
 import { NotificationsPage } from './notifications.page';
-import { SharedModule } from 'src/app/component/shared.module';
+
 import { BackButtonComponent } from 'src/app/component/back-button/back-button.component';
 
 @NgModule({
