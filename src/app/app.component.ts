@@ -1,11 +1,15 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { GlobalService } from './provider/global-services/global.service';
-import { Subscription } from 'rxjs';
+import { Subscription, lastValueFrom } from 'rxjs';
 import { register } from 'swiper/element/bundle';
 import { AuthService } from './provider/auth-Service/auth.service';
+import { StorageService } from './provider/stroage/storage.service';
+import { NavController,Platform } from '@ionic/angular';
 
-register();
+register();//swiper register function
+
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -31,7 +35,7 @@ export class AppComponent implements OnInit, OnDestroy{
     { title: 'Refer & Win', url: 'referandwin', img: 'assets/cbs-nn/hamburger/refer.svg' },
     { title: 'Our Associates', url: '#', img: 'assets/cbs-nn/hamburger/associates.svg' },
     { title: 'Term & Policy', url: '#', img: 'assets/cbs-nn/hamburger/accept.svg' },
-    { title: 'Logout', url: 'login', img: 'assets/cbs-nn/hamburger/logout.svg' }
+    { title: 'Logout', url: 'logout', img: 'assets/cbs-nn/hamburger/logout.svg' }
 
   ];
 
@@ -52,7 +56,10 @@ export class AppComponent implements OnInit, OnDestroy{
   nightMode:boolean=false;
   constructor(private router:Router,
     private globalService:GlobalService,
-    private authService:AuthService) {
+    private authService:AuthService,
+    private storageService:StorageService,
+    private navController:NavController,
+    private platform:Platform) {
       this.doTokenExist();
     }
   ngOnDestroy(): void {
@@ -95,8 +102,27 @@ export class AppComponent implements OnInit, OnDestroy{
     )
 
   }
+  goto(page){
+    if(page.url === "logout"){
+      this.logoutUser();
+    }
+    else{
+      this.router.navigate([page.url]);
+    }
+
+  }
 
   async goAhead(user) {
     await this.globalService.setUser(user);
-}
+  }
+
+  async logoutUser(){
+    const deviceId=await this.storageService.getDeviceId();
+    this.globalService.isLoggedIn=false;
+    await lastValueFrom(this.authService.logoutUser(deviceId));
+    this.storageService.clear();
+    await this.navController.setDirection('root');
+    await this.router.navigate(['login'])
+
+  }
 }

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { GlobalService } from '../global-services/global.service';
 import { LoginService } from '../login/login.service';
 import { Router } from '@angular/router';
@@ -15,6 +15,7 @@ export class LoggedInService {
     private router:Router,
     private navController:NavController,
     private loader:LoadingService) { }
+
 
     afterLoginProcess(res){
       this.globalService.isLoggedIn=true;

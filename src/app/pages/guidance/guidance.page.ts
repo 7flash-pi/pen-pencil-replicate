@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -14,8 +14,10 @@ export class GuidancePage implements OnInit {
   openCard:boolean=true;
   openBlog:boolean=false;
 
-  constructor(private router:Router,
-              private route:ActivatedRoute) { }
+  constructor() { }
+
+  router=inject(Router);
+
 
   ngOnInit() {
   }

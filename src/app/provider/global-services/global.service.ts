@@ -14,6 +14,7 @@ export class GlobalService {
   public accessToken;
   public homeData:any;
   public isOfflineMode=true;
+  public redirectUrl:string;
   private _accessToken$: BehaviorSubject<string> = new BehaviorSubject<string>(null);
   public _user$: BehaviorSubject<any> = new BehaviorSubject<any>(null);
   public _isUserMenuDisabled$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
