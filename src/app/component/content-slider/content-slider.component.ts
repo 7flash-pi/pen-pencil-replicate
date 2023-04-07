@@ -1,14 +1,19 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, Component, OnInit, ViewChild } from '@angular/core';
 import { BannerModal } from 'src/app/provider/base/base.model';
 import { GlobalService } from 'src/app/provider/global-services/global.service';
 import { LoginService } from 'src/app/provider/login/login.service';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { IonicModule } from '@ionic/angular';
 
 @Component({
+
+  standalone:true,
   selector: 'app-content-slider',
   templateUrl: './content-slider.component.html',
   styleUrls: ['./content-slider.component.scss'],
+  imports:[IonicModule],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
 export class ContentSliderComponent  implements OnInit {
 
@@ -68,8 +73,8 @@ async getSliders(res) {
 }
 async openFromSlider(item: BannerModal) {
 
-  await this.globalService.openFromSliderMain(item);
-  console.log(item);
+  const res=await this.globalService.openFromSliderMain(item);
+  console.log(res);
 }
 
 

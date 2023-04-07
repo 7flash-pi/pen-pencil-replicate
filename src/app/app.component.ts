@@ -33,7 +33,7 @@ export class AppComponent implements OnInit, OnDestroy{
     { title: 'About Latest Version', url: '#', img: 'assets/cbs-nn/hamburger/version.png' },
     { title: 'Renew & Upgrade Package', url: '#', img: 'assets/cbs-nn/hamburger/recycle.svg' },
     { title: 'Refer & Win', url: 'referandwin', img: 'assets/cbs-nn/hamburger/refer.svg' },
-    { title: 'Our Associates', url: '#', img: 'assets/cbs-nn/hamburger/associates.svg' },
+    { title: 'Our Associates', url: 'associate', img: 'assets/cbs-nn/hamburger/associates.svg' },
     { title: 'Term & Policy', url: '#', img: 'assets/cbs-nn/hamburger/accept.svg' },
     { title: 'Logout', url: 'logout', img: 'assets/cbs-nn/hamburger/logout.svg' }
 
@@ -105,6 +105,10 @@ export class AppComponent implements OnInit, OnDestroy{
   goto(page){
     if(page.url === "logout"){
       this.logoutUser();
+    }
+    else if(page.url === "associate"){
+      this.globalService.showToast('Coming Soon!!!',1000,'bottom','light');
+      this.router.navigate(['home']);
     }
     else{
       this.router.navigate([page.url]);

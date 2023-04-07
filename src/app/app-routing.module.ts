@@ -53,6 +53,10 @@ const routes: Routes = [
     path: 'qotd',
     loadChildren: () => import('./pages/qotd/qotd.module').then( m => m.QotdPageModule)
   },
+  {
+    path: 'about-latest-version',
+    loadChildren: () => import('./pages/about-latest-version/about-latest-version.module').then( m => m.AboutLatestVersionPageModule)
+  },
 ];
 
 @NgModule({

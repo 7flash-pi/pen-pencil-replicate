@@ -1,10 +1,15 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ModalController } from '@ionic/angular';
+import { IonicModule, ModalController } from '@ionic/angular';
+import { BackButtonComponent } from '../back-button/back-button.component';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 @Component({
+  standalone:true,
   selector: 'app-search-modal',
   templateUrl: './search-modal.component.html',
   styleUrls: ['./search-modal.component.scss'],
+  imports:[BackButtonComponent,IonicModule,FormsModule,CommonModule]
 })
 export class SearchModalComponent  implements OnInit {
 

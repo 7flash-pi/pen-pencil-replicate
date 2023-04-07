@@ -8,7 +8,7 @@ import { LoginPageRoutingModule } from './login-routing.module';
 
 import { LoginPage } from './login.page';
 import { TandcModalComponent } from 'src/app/component/tandc-modal/tandc-modal.component';
-import { SharedModule } from 'src/app/component/shared.module';
+
 
 
 @NgModule({
@@ -17,8 +17,8 @@ import { SharedModule } from 'src/app/component/shared.module';
     ReactiveFormsModule,
     IonicModule,
     LoginPageRoutingModule,
-    SharedModule
+    TandcModalComponent
   ],
-  declarations: [LoginPage,TandcModalComponent]
+  declarations: [LoginPage]
 })
 export class LoginPageModule {}

@@ -7,7 +7,8 @@ import { IonicModule } from '@ionic/angular';
 import { SdlPageRoutingModule } from './sdl-routing.module';
 
 import { SdlPage } from './sdl.page';
-import { SharedModule } from 'src/app/component/shared.module';
+import { BackButtonComponent } from 'src/app/component/back-button/back-button.component';
+
 
 @NgModule({
   imports: [
@@ -15,7 +16,7 @@ import { SharedModule } from 'src/app/component/shared.module';
     FormsModule,
     IonicModule,
     SdlPageRoutingModule,
-    SharedModule
+    BackButtonComponent
   ],
   declarations: [SdlPage]
 })

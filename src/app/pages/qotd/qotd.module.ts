@@ -7,7 +7,8 @@ import { IonicModule } from '@ionic/angular';
 import { QotdPageRoutingModule } from './qotd-routing.module';
 
 import { QotdPage } from './qotd.page';
-import { SharedModule } from 'src/app/component/shared.module';
+import { BackButtonComponent } from 'src/app/component/back-button/back-button.component';
+
 
 @NgModule({
   imports: [
@@ -15,7 +16,9 @@ import { SharedModule } from 'src/app/component/shared.module';
     FormsModule,
     IonicModule,
     QotdPageRoutingModule,
-    SharedModule
+    BackButtonComponent
+
+
   ],
   declarations: [QotdPage]
 })

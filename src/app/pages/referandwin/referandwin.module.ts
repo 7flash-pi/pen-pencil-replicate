@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { ReferandwinPageRoutingModule } from './referandwin-routing.module';
 
 import { ReferandwinPage } from './referandwin.page';
-import { SharedModule } from 'src/app/component/shared.module';
+import { BackButtonComponent } from 'src/app/component/back-button/back-button.component';
 
 @NgModule({
   imports: [
@@ -15,7 +15,8 @@ import { SharedModule } from 'src/app/component/shared.module';
     FormsModule,
     IonicModule,
     ReferandwinPageRoutingModule,
-    SharedModule
+    BackButtonComponent
+
   ],
   declarations: [ReferandwinPage]
 })
