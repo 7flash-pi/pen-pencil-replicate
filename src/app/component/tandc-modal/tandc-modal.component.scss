@@ -1,28 +1,32 @@
-ion-backdrop{
-  opacity: 0.7;
-  background: inherit;
+ion-row{
+  margin: unset;
+  padding: unset;
+}
+.modal-content{
+  background: #fff;
+  margin: auto 5%;
+  border-radius: 15px;
+  }
+
+
+.tandc-btn{
+
+  --background:#fff;
+  --color:var(--ion-color-primary);
+  width: 40%;
+  height:3em;
+
 
 }
 
-ion-label{
-  .termClabel{
-    overflow-wrap: break-word;
+ion-col{
+  --background:inherit;
+  ion-checkbox{
+    --checkbox-background-checked:#dad8d8;
+    --checkmark-color:#d04043;
+    --border-color-checked:#f3f3f3;
+
   }
 
 }
-.tandc-btn{
-  border-radius: 20px;
-  --background:#fff;
-  --color:var(--ion-color-primary);
-}
-.modal-content{
-  max-width: 400px;
-  text-align: center;
-  width: 90%;
-  height: 40%;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  margin: auto auto;
-  border-radius: 15px;
 
-
-}
