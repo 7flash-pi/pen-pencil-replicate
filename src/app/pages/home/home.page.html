@@ -2,7 +2,12 @@
 <app-home-nav></app-home-nav>
 
 <ion-content>
-  <ion-text class="title">Hi {{ userInfo?.firstName || ''}}!</ion-text>
+  <section class="sectionContent">
+    <ion-row>
+      <ion-col>
+        <ion-text  class="ion-text-start title" >Hi {{ userInfo?.firstName || ''}}!</ion-text>
+      </ion-col>
+    </ion-row>
   <app-content-slider></app-content-slider>
   <app-home-content></app-home-content>
       <ion-row>
@@ -11,7 +16,6 @@
         </ion-col>
       </ion-row>
 
-  <section class="connectBar">
     <ion-row>
 
       <ion-col>

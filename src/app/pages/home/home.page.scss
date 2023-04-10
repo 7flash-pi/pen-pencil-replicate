@@ -1,8 +1,14 @@
+ion-content{
+  .sectionContent{
+    margin: 0 auto;
+    width: 90%;
+  }
+}
+
 .title{
   font-size: 25px;
   font-weight: 600;
   --color:#1d3557;
-  margin: 0 25px;
 }
 
 .footer-img{

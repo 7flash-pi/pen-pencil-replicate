@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { TandcModalComponent } from 'src/app/component/tandc-modal/tandc-modal.component';
@@ -15,7 +15,7 @@ export class SignupPage implements OnInit {
   signUpForm:FormGroup;
   phoneRegex:boolean=false;
 
-  mobileNumber:number;
+  @Input() mobileNumber:number;
   @ViewChild('btnNext',{
     static:true
   }) btn:ElementRef;
@@ -53,6 +53,7 @@ export class SignupPage implements OnInit {
       }
   }
   async gotoTandC(event,btn,tel){
+
     const modal= await this.modlctrl.create({
       component:TandcModalComponent,
       cssClass:'tandc-modal-Class',
@@ -76,13 +77,14 @@ export class SignupPage implements OnInit {
 
     const msg="coming soon";
     event.target.disabled=true;
-    await this.loaderService.showLoading(msg);
+
     const user={
       mobile:mobile.value,
     };
+    this.mobileNumber=this.signUpForm.value['mobile'];
+    console.log(user);
+    this.router.navigateByUrl('enter-otp',{ state: {  mobile:this.mobileNumber } });
 
-    this.router.navigate(['login']);
-    this.loaderService.unloadData();
 
 
   }

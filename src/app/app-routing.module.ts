@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { BlogCardComponent } from './component/blog-card/blog-card.component';
 import { GuidanceCardComponent } from './component/guidance-card/guidance-card.component';
+import { EnterOtpComponent } from './component/enter-otp/enter-otp.component';
 
 const routes: Routes = [
   {
@@ -56,6 +57,11 @@ const routes: Routes = [
   {
     path: 'about-latest-version',
     loadChildren: () => import('./pages/about-latest-version/about-latest-version.module').then( m => m.AboutLatestVersionPageModule)
+  },
+  {
+    path: 'enter-otp',
+    // component:EnterOtpComponent  normal loading
+    loadComponent: () => import('./component/enter-otp/enter-otp.component').then(mod => mod.EnterOtpComponent)
   },
 ];
 

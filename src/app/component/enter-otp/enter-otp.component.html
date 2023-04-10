@@ -1,0 +1,57 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <app-back-button btnIcon="arrow-back-outline" btnText="enter otp" defaultHref="signup"></app-back-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+ <section class="signup-otp">
+  <ion-row>
+    <ion-col >
+      <ion-img src="assets/auth/otp_top.png"  class="slideInLeft"></ion-img>
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="ion-margin-top">
+    <ion-col>
+      <ion-text style="font-size: 16px; font-weight: 600; --color:#000;">
+        OTP sent to +91 {{mobileNumber}}.
+      </ion-text>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col class="ion-justify-content-center ion-margin-top">
+      <ion-item class="box jackInTheBox">
+        <ion-input placeholder="Enter 6 digit otp here" type="number" minlength="6" maxlength="6" required aria-label="otp"
+        ></ion-input>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col class="ion-margin-top">
+      <ion-button class="large-btn"  shape="round" >
+        Resend OTP
+      </ion-button>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col class="ion-margin-top">
+     <ion-text>Resend Otp in {{this.time}} seconds.</ion-text>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col class="ion-margin-top">
+      <ion-button class="large-btn"  shape="round" disabled style="font-size: 16px; font-weight: 600;">
+        Login
+      </ion-button>
+    </ion-col>
+  </ion-row>
+
+ </section>
+
+</ion-content>
