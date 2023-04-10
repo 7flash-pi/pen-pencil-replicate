@@ -50,7 +50,6 @@ orderProcessing:boolean;
       page:pageNo,
     }
     if(pageNo === 1){
-      this.plans=[];
       this.orderProcessing=true;
     }
     try{
@@ -62,6 +61,17 @@ orderProcessing:boolean;
     }
     catch (err){
       console.log(err.message);
+    }
+  }
+
+  async checkRenewal(event,plan?){
+
+    if(plan && plan?.orderDetails && plan?.orderDetails?.remainingDays === 0){
+      this.router.navigate(['my-package/no-renewal-plans']);
+    }
+    else{
+      const msg="still"+plan.orderDetails.remainingDays + " days left"
+      this.globalService.showToast(msg,1000,'mid','light');
     }
   }
 

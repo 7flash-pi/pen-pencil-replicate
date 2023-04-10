@@ -30,3 +30,7 @@ ion-input{
   box-shadow: 0px 2px 5px 3px #ececec;
   border-radius: 7px;
 }
+.animate__animated.animate__slideInLeft{
+  --animate-duration: 3s;
+  --animation-delay: 2s ;
+}

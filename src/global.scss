@@ -29,7 +29,7 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800,900&display=swap');
 
 //animate.css
-@import 'animate.css';
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
 
 //global style
 * {
@@ -38,8 +38,10 @@
 }
 
 :root {
-  --ion-font-family: 'Montserrat', sans-serif !important;
+ font-family: 'Montserrat', sans-serif !important;
   text-rendering: optimizeSpeed;
+
+
 }
 
 .login-content{
@@ -108,4 +110,7 @@ ion-button{
   width: 50%;
   height: 3em;
   text-align: center;
+}
+.animated{
+  --animated-duration:0.8s;
 }

@@ -61,7 +61,12 @@ const routes: Routes = [
   {
     path: 'enter-otp',
     // component:EnterOtpComponent  normal loading
-    loadComponent: () => import('./component/enter-otp/enter-otp.component').then(mod => mod.EnterOtpComponent)
+    loadComponent: () => import('./component/enter-otp/enter-otp.component').then(mod => mod.EnterOtpComponent) //lazy loading
+  },
+  {
+    path: 'my-package/no-renewal-plans',
+    // component:EnterOtpComponent  normal loading
+    loadComponent: () => import('./component/no-renewal-plan/no-renewal-plan.component').then(mod => mod.NoRenewalPlanComponent) //lazy loading
   },
 ];
 

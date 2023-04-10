@@ -36,5 +36,11 @@ export class HomePage implements OnInit,OnDestroy {
     this.router.navigate(['qotd']);
   }
 
+  ionViewDidEnter(){
+    if(this.globalService.isLoggedIn === true && this.userInfo && this.userInfo.id){
+
+    }
+    this.globalService.setUserMenuDisabled(false);
+  }
 
 }

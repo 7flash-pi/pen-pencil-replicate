@@ -9,10 +9,10 @@
 
     <ion-row>
       <ion-col>
-        <ion-card class="ion-margin plan-card"  *ngFor=" let plan of plans ">
+        <ion-card class="ion-margin plan-card"  *ngFor=" let singlePlan of plans " (click)="checkRenewal($event,singlePlan)">
           <ion-img class="plan-img" src="assets/cbs-nn/pro_plans/plan_active.svg"></ion-img>
-          <ion-text style="font-weight: 600; font-size: 14px;">{{ plan.orderDetails.name}}</ion-text>
-          <p>Complimentary({{plan.orderDetails.remainingDays > 0 ? plan.orderDetails.remainingDays + ' Days left' : 'Expired'}})</p>
+          <ion-text style="font-weight: 600; font-size: 14px;">{{ singlePlan.orderDetails.name}}</ion-text>
+          <p>Complimentary({{singlePlan.orderDetails.remainingDays > 0 ? singlePlan.orderDetails.remainingDays + ' Days left' : 'Expired'}})</p>
         </ion-card>
 
       </ion-col>
