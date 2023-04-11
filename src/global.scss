@@ -111,6 +111,9 @@ ion-button{
   height: 3em;
   text-align: center;
 }
-.animated{
-  --animated-duration:0.8s;
+
+.btnText::part(text){
+  --color:var(--appTxt);
+  font-size: 14px;
+  font-weight: 600;
 }

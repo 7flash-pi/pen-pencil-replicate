@@ -57,4 +57,8 @@ export class AppUrlService {
     return this.APP_URL_V1 + `orders`;
   }
 
+  //home Layout
+  public HOME_LAYOUT(orgId) {
+    return this.APP_URL_V1 + `web-preference/${orgId}`;
+  }
 }

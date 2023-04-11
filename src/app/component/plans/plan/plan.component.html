@@ -1,0 +1,18 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <app-back-button btnIcon="arrow-back-outline" [btnText]="plan?.footer" defaultHref="home" ></app-back-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <swiper-container [slidesPerView]="1" [loop]="true"   #slideWithNav [options]="slideOpt" [pager]="true">
+    <swiper-slide class="content-slide" *ngFor="let banner of bannersList" class="slideInLeft">
+        <ion-img [src]="banner.image.url || 'assets/plans/qbc-banner.png'"  alt=""></ion-img>
+    </swiper-slide>
+  </swiper-container>
+  <app-plan-zero></app-plan-zero>
+
+
+</ion-content>
+

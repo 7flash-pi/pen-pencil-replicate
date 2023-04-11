@@ -82,7 +82,6 @@ export class SignupPage implements OnInit {
       mobile:mobile.value,
     };
     this.mobileNumber=this.signUpForm.value['mobile'];
-    console.log(user);
     this.router.navigateByUrl('enter-otp',{ state: {  mobile:this.mobileNumber } });
 
 

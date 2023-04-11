@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { BlogCardComponent } from './component/blog-card/blog-card.component';
-import { GuidanceCardComponent } from './component/guidance-card/guidance-card.component';
-import { EnterOtpComponent } from './component/enter-otp/enter-otp.component';
+
 
 const routes: Routes = [
   {
@@ -65,8 +63,18 @@ const routes: Routes = [
   },
   {
     path: 'my-package/no-renewal-plans',
-    // component:EnterOtpComponent  normal loading
+    // component:NoRenewalPlanComponent  normal loading
     loadComponent: () => import('./component/no-renewal-plan/no-renewal-plan.component').then(mod => mod.NoRenewalPlanComponent) //lazy loading
+  },
+  {
+    path: 'plans',
+    // component:EnterOtpComponent  normal loading
+    loadComponent: () => import('./component/plans/plan/plan.component').then(mod => mod.PlanComponent) //lazy loading
+  },
+  {
+    path: 'plans/plan-zero',
+    // component:EnterOtpComponent  normal loading
+    loadComponent: () => import('./component/plans/plan-zero/plan-zero.component').then(mod => mod.PlanZeroComponent) //lazy loading
   },
 ];
 

@@ -1,4 +1,4 @@
-import {  ChangeDetectorRef, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import {  ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
@@ -16,7 +16,7 @@ import { lastValueFrom } from 'rxjs';
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
-export class LoginPage implements OnInit ,OnDestroy {
+export class LoginPage implements OnInit  {
 
   @ViewChild('btn',{
     static:true
@@ -44,16 +44,21 @@ export class LoginPage implements OnInit ,OnDestroy {
               }
 
   ngOnInit() {
-    this.menuctrl.enable(false);
+
     this.loginForm = this.fb.group({
       mobile:[this.phoneNumber,[Validators.required,Validators.maxLength(10),Validators.minLength(10),Validators.pattern('^[0-9]*$')]],
       password:['',[Validators.required,Validators.maxLength(6)]]
     });
   }
 
-  ngOnDestroy(): void {
+  ionViewDidEnter(){
+    this.menuctrl.enable(false);
+  }
+
+  ionViewDidLeave(){
     this.menuctrl.enable(true);
   }
+
 
   checkphoneNumber(input){
     if(input.target && input.target.value ){

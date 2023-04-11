@@ -70,8 +70,8 @@ orderProcessing:boolean;
       this.router.navigate(['my-package/no-renewal-plans']);
     }
     else{
-      const msg="still"+plan.orderDetails.remainingDays + " days left"
-      this.globalService.showToast(msg,1000,'mid','light');
+      const msg="You Still have "+plan.orderDetails.remainingDays + " days left"
+      this.globalService.showToast(msg,1000,'bottom');
     }
   }
 

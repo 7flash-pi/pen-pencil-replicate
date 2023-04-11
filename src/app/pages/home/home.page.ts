@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { GlobalService } from 'src/app/provider/global-services/global.service';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router'
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -14,15 +15,17 @@ export class HomePage implements OnInit,OnDestroy {
   userSub:Subscription;
 
   constructor(private globalService:GlobalService,
-    private router:Router) { }
+    private router:Router,
+    public menuCtrl:MenuController) { }
+
   ngOnDestroy(): void {
     this.userSub.unsubscribe();
   }
 
   ngOnInit() {
     this.getUserInfo();
-    this.router.onSameUrlNavigation = 'reload';
   }
+
 
   getUserInfo(){
     this.userSub = this.globalService.getUser().subscribe( user => {
@@ -42,5 +45,6 @@ export class HomePage implements OnInit,OnDestroy {
     }
     this.globalService.setUserMenuDisabled(false);
   }
+
 
 }
