@@ -72,10 +72,22 @@ const routes: Routes = [
     loadComponent: () => import('./component/plans/plan/plan.component').then(mod => mod.PlanComponent) //lazy loading
   },
   {
-    path: 'plans/plan-zero',
+    path: 'course-select',
     // component:EnterOtpComponent  normal loading
-    loadComponent: () => import('./component/plans/plan-zero/plan-zero.component').then(mod => mod.PlanZeroComponent) //lazy loading
+    loadComponent: () => import('./component/plans/course-select/course-select.component').then(mod => mod.CourseSelectComponent) //lazy loading
   },
+  {
+    path: 'plans/nursing-olympiad',
+    // component:EnterOtpComponent  normal loading
+    loadComponent: () => import('./component/nursing-olypmpiad/nursing-olypmpiad.component').then(mod => mod.NursingOlypmpiadComponent) //lazy loading
+  },
+  {
+    path: 'plans/nursing-olympiad/nursing-detail',
+    // component:EnterOtpComponent  normal loading
+    loadComponent: () => import('./component/nursing-detail/nursing-detail.component').then(mod => mod.NursingDetailComponent) //lazy loading
+  },
+
+
 ];
 
 @NgModule({

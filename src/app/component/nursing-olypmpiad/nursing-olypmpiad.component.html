@@ -1,0 +1,24 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="silver-bg">
+    <app-back-button btnIcon="arrow-back-outline" btnText="Nursing olympiad" defaultHref="plans"></app-back-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col class="ion-padding">
+      <swiper-container [slidesPerView]="1" [loop]="true"   [options]="slideOpt" [pager]="true" >
+        <swiper-slide class="content-slide" *ngFor="let banner of banners" class="slideInLeft">
+            <ion-img [src]="banner.image.url || 'assets/plans/qbc-banner.png'"  alt=""></ion-img>
+        </swiper-slide>
+      </swiper-container>
+    </ion-col>
+
+    <ion-row *ngFor="let item of testList">
+      <ion-col class="ion-padding">
+          <ion-img src={{item?.img}} (click)="goToContent($event,item)"></ion-img>
+      </ion-col>
+    </ion-row>
+  </ion-row>
+
+</ion-content>

@@ -145,3 +145,60 @@ export class PackageModal {
       this.expiryDuration = item.expiryDuration || '-1';
   }
 }
+export class VideoGalleryModal {
+  title: string;
+  videos: Array<SuggestedVideoModal> = [];
+
+  constructor(props) {
+      this.title = props.title || '';
+      if (props && props.videoUrls && props.videoUrls.length > 0) {
+          props.videoUrls.forEach(item => {
+              this.videos.push(new SuggestedVideoModal(item));
+          });
+      } else {
+          this.videos = [];
+      }
+
+  }
+}
+export class SuggestedVideoModal {
+  image: string;
+  name: string;
+  duration: string;
+  id: string;
+  cardType: string;
+  embedCode: string;
+  imageUrl: string;
+
+  constructor(suggestedVideo) {
+      suggestedVideo = suggestedVideo || {};
+      this.cardType = 'vimeo';
+      this.id = (suggestedVideo && suggestedVideo._id) ? suggestedVideo._id : '';
+      this.duration = (suggestedVideo && suggestedVideo.duration) ? suggestedVideo.duration.toString() : '';
+      this.image = this.returnImage(suggestedVideo);
+      this.imageUrl = this.returnImage(suggestedVideo);
+      this.name = suggestedVideo.title || suggestedVideo.name || 'Default name';
+      this.embedCode = this.returnVideoUrl(suggestedVideo);
+  }
+
+  returnImage(video) {
+      if (video && video.image) {
+          return video.image;
+      } else if (video && video.thumbnail_url) {
+          return video.thumbnail_url;
+      } else {
+          return 'assets/video_default.png';
+      }
+  }
+
+  returnVideoUrl(video) {
+      if (video && video.embedCode) {
+          return video.embedCode;
+      } else if (video && video.hls_url) {
+          return video.hls_url;
+      } else {
+          return '';
+      }
+  }
+
+}

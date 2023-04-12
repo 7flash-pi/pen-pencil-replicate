@@ -48,14 +48,12 @@ export class ContentSliderComponent  implements OnInit {
 
   ngOnInit() {
     this.getHomeLayout();
-    console.log(this.bannerB2);
 
   }
   async getHomeLayout() {
     this.homeDataSubs = this.globalService._homeData$.subscribe(res => {
         if (res) {
             this.getSliders(res);
-            console.log(res);
         }
     });
 
@@ -74,7 +72,6 @@ async getSliders(res) {
 async openFromSlider(item: BannerModal) {
 
   const res=await this.globalService.openFromSliderMain(item);
-  console.log(res);
 }
 
 

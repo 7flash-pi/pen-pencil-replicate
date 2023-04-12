@@ -14,15 +14,15 @@ export class HomeContentComponent  implements OnInit {
        img:'assets/new_assets/free_pack/plan_zero.png' ,
        footer:'Free Pack 3.0',
        text:'(Prepare With us),',
-       defaultHref:'plan-zero',
-      sliderImg:'https://d2bps9p1kiy4ka.cloudfront.net/5ee9a14f0e10…11c078d1/5516a0d0-a5a2-4390-b1c9-552f1849aedc.png' },
+       defaultHref:'plans',
+     },
 
     {
       plan:'Plan A',
        img:'assets/cbs-nn/home_screen/plan_a.png',
        footer:'Crash Course 2.0',
        text:'(Exam Centric)',
-       defaultHref:'#'},
+       defaultHref:'course-select'},
 
     {
       plan:'Plan B',
@@ -82,7 +82,13 @@ export class HomeContentComponent  implements OnInit {
 
   goToPlan(event,data?){
     this.planName=data;
-    this.router.navigateByUrl('plans',{ state: {  plan:this.planName} });
+    if(this.planName?.defaultHref === 'plans'){
+      this.router.navigateByUrl(this.planName?.defaultHref,{ state: {  plan:this.planName} });
+
+    }
+    else if(this.planName?.defaultHref === 'course-select'){
+      this.router.navigateByUrl(this.planName?.defaultHref,{ state: {  plan:this.planName} });
+    }
   }
 
 }

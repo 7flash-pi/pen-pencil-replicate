@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { PlanZeroComponent } from './plan-zero.component';
+import { NursingOlypmpiadComponent } from './nursing-olypmpiad.component';
 
-describe('PlanZeroComponent', () => {
-  let component: PlanZeroComponent;
-  let fixture: ComponentFixture<PlanZeroComponent>;
+describe('NursingOlypmpiadComponent', () => {
+  let component: NursingOlypmpiadComponent;
+  let fixture: ComponentFixture<NursingOlypmpiadComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ PlanZeroComponent ],
+      declarations: [ NursingOlypmpiadComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(PlanZeroComponent);
+    fixture = TestBed.createComponent(NursingOlypmpiadComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));
