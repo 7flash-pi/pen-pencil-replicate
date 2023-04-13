@@ -44,9 +44,11 @@
             <ion-text class="video-title ion-margin-start">Recommended Videos</ion-text>
         </ion-col>
       <ion-row class="video-container">
-        <ion-col class="ion-margin-top" *ngFor="let singleSuggestedVideo of suggestedVideos">
-          <ion-img  [src]="singleSuggestedVideo?.imageUrl" class="img-video"></ion-img>
-          <ion-img class="play-btn" src="assets/hybrid/dict/play.png"></ion-img>
+        <ion-col class="ion-margin-top" *ngFor="let singleSuggestedVideo of suggestedVideos" (click)="openYoutubePlayer(singleSuggestedVideo)">
+          <section (click)="openYoutube(singleSuggestedVideo)">
+            <ion-img  [src]="singleSuggestedVideo?.imageUrl" class="img-video"></ion-img>
+            <ion-img class="play-btn" src="assets/hybrid/dict/play.png"></ion-img>
+          </section>
         </ion-col>
       </ion-row>
     </ion-row>

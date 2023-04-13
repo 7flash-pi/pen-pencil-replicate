@@ -7,6 +7,7 @@ import { HomeLayoutService } from 'src/app/provider/home-layout.service';
 import { FREE_PACK_PROGRAM_ID, ORGANIZATION_ID } from 'src/app/constant/global-contant-services';
 import { lastValueFrom } from 'rxjs';
 import { CommonModule } from '@angular/common';
+import { GlobalService } from 'src/app/provider/global-services/global.service';
 
 
 @Component({
@@ -43,7 +44,8 @@ export class PlanComponent  implements OnInit {
 
 
   constructor(private router:Router,
-    private homeLayoutService:HomeLayoutService) { }
+    private homeLayoutService:HomeLayoutService,
+    private globalService:GlobalService) { }
 
   ngOnInit() {
     this.plan=history.state['plan'];
@@ -62,7 +64,7 @@ export class PlanComponent  implements OnInit {
     {
         imageUrl: 'assets/new_assets/free_pack/test.png',
         name: 'Daily Live Test',
-        url: '/test-categories',
+        url: 'plans/test-categories',
         order: '04',
         type: 'subjectWiseTest',
         desc: `Practice everyday to crack NORCET`
@@ -70,7 +72,7 @@ export class PlanComponent  implements OnInit {
     {
         imageUrl: 'assets/new_assets/free_pack/pencil.png',
         name: 'Revision Notes for LMR',
-        url: '/list-page',
+        url: 'plans/list-page',
         order: '01',
         type: 'videoLecture',
         desc: ''
@@ -78,7 +80,7 @@ export class PlanComponent  implements OnInit {
     {
         imageUrl: 'assets/new_assets/free_pack/most_recent.png',
         name: 'Most Recent & Previous Years’ Papers',
-        url: '/list-page',
+        url: 'plans/list-page',
         order: '03',
         type: 'prevPaper',
         desc: ''
@@ -158,12 +160,17 @@ async getHomeVideos(res){
 
   }
   goToContent($event,course){
-    console.log(course);
-    if(course?.name === 'Nursing Olympiad'){
-      this.router.navigateByUrl(course?.url,{ state:{programId: this.programId}});
-    }
+      this.router.navigateByUrl(course?.url,{ state:{programId: this.programId,course:course}});
   }
 
+  openYoutube(url){
+    this.globalService.setYoutubeData(url);
+
+  }
+  openYoutubePlayer(videos){
+    this.router.navigateByUrl('video-player',{state:{video:videos}});
+    console.log(videos);
+  }
 
 
 

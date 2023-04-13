@@ -10,6 +10,7 @@ export class StorageService {
   TOKEN ='token';
   USER = 'user';
   DEVICE_ID = 'deviceId';
+  YOUTUBE_DATA = 'youtube_data';
    _storage: Storage | null = null;
 
   constructor(private storage:Storage) {
@@ -66,6 +67,12 @@ export class StorageService {
   getData(key) {
       return this.storage.get(key);
   }
+  setYoutubeData(value) {
+    return this.storage.set(this.YOUTUBE_DATA, value);
+  }
+  getYoutubeData() {
+    return this.storage.get(this.YOUTUBE_DATA);
+}
 
 
 }

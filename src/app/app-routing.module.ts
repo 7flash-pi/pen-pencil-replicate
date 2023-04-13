@@ -86,6 +86,35 @@ const routes: Routes = [
     // component:EnterOtpComponent  normal loading
     loadComponent: () => import('./component/nursing-detail/nursing-detail.component').then(mod => mod.NursingDetailComponent) //lazy loading
   },
+  {
+    path: 'plans/test-categories',
+    // component:EnterOtpComponent  normal loading
+    loadComponent: () => import('./component/test-categories/test-categories.component').then(mod => mod.TestCategoriesComponent) //lazy loading
+  },
+  {
+    path: 'plans/test-categories/subject-test',
+    // component:EnterOtpComponent  normal loading
+    loadComponent: () => import('./component/test-categories/subject-test/subject-test.component').then(mod => mod.SubjectTestComponent) //lazy loading
+  },
+  {
+    path: 'plans/test-categories/grand-test',
+    // component:EnterOtpComponent  normal loading
+    loadComponent: () => import('./component/test-categories/grand-test/grand-test.component').then(mod => mod.GrandTestComponent) //lazy loading
+  },
+  {
+    path: 'plans/list-page',
+    // component:EnterOtpComponent  normal loading
+    loadComponent: () => import('./component/test-categories/list-page/list-page.component').then(mod => mod.ListPageComponent) //lazy loading
+  },
+  {
+    path: 'video-player',
+    // component:EnterOtpComponent  normal loading
+    loadComponent: () => import('./component/video-player/video-player.component').then(mod => mod.VideoPlayerComponent) //lazy loading
+  },
+
+
+
+
 
 
 ];

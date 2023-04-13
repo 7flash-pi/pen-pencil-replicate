@@ -10,11 +10,14 @@ import { Router } from '@angular/router';
 })
 export class GlobalService {
 
+  public youtubeData;
+
   public isLoggedIn:boolean=false;
   public accessToken;
   public homeData:any;
   public isOfflineMode=true;
   public redirectUrl:string;
+  public _youtubeData$: BehaviorSubject<any> = new BehaviorSubject<any>(null);
   private _accessToken$: BehaviorSubject<string> = new BehaviorSubject<string>(null);
   public _user$: BehaviorSubject<any> = new BehaviorSubject<any>(null);
   public _isUserMenuDisabled$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
@@ -88,9 +91,7 @@ async openFromSliderMain(item: BannerModal) {
   const prepString1 = 'https://nursingnextlive.com/';
   const prepString2 = 'https://www.nursingnextlive.com/';
   const prepString3 = 'www.nursingnextlive.com/';
-  // @ts-ignore
   if (item && item.actionUrl && item.actionUrl.length > 0) {
-      // @ts-ignore
       if (item['actionUrl'].includes(prepString1) || item.actionUrl.includes(prepString2) || item.actionUrl.includes(prepString3)) {
           if (item.actionUrl.includes(prepString1)) {
               const splitUrl = item.actionUrl.slice(prepString1.length, item.actionUrl.length);
@@ -110,5 +111,10 @@ async openFromSliderMain(item: BannerModal) {
   }
 }
 
+  setYoutubeData(url){
+    this.youtubeData=url;
+    this._youtubeData$.next(url);
+    return this.storageService.setYoutubeData(url);
+  }
 
 }
