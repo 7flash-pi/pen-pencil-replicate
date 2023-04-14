@@ -8,6 +8,8 @@ import { FREE_PACK_PROGRAM_ID, ORGANIZATION_ID } from 'src/app/constant/global-c
 import { lastValueFrom } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { GlobalService } from 'src/app/provider/global-services/global.service';
+import { PackCardComponent } from '../../pack-card/pack-card.component';
+import { VideosCardComponent } from '../../videos-card/videos-card.component';
 
 
 @Component({
@@ -15,7 +17,7 @@ import { GlobalService } from 'src/app/provider/global-services/global.service';
   selector: 'app-plan',
   templateUrl: './plan.component.html',
   styleUrls: ['./plan.component.scss'],
-  imports:[IonicModule,BackButtonComponent,CommonModule],
+  imports:[IonicModule,BackButtonComponent,CommonModule,PackCardComponent,VideosCardComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
 export class PlanComponent  implements OnInit {
@@ -163,13 +165,8 @@ async getHomeVideos(res){
       this.router.navigateByUrl(course?.url,{ state:{programId: this.programId,course:course}});
   }
 
-  openYoutube(url){
-    this.globalService.setYoutubeData(url);
-
-  }
   openYoutubePlayer(videos){
     this.router.navigateByUrl('video-player',{state:{video:videos}});
-    console.log(videos);
   }
 
 
