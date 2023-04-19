@@ -61,4 +61,8 @@ export class AppUrlService {
   public HOME_LAYOUT(orgId) {
     return this.APP_URL_V1 + `web-preference/${orgId}`;
   }
+
+  public GET_CHAPTER_LIST(programId, subjectId) {
+    return this.APP_URL_V1 + `programs/${programId}/subjects/${subjectId}/chapters`;
+}
 }

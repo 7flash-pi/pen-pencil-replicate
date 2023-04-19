@@ -1,5 +1,23 @@
 <ion-header class="ion-no-border">
   <ion-toolbar class="silver-bg">
-    <app-back-button btnText={{courseItem?.name}} btn></app-back-button>
+    <app-back-button btnText={{courseItem?.name}} defaultHref="plans"></app-back-button>
   </ion-toolbar>
 </ion-header>
+
+
+<ion-content>
+  <ion-row >
+    <ion-col>
+      <ion-card *ngFor="let item of chapterList" class="chapterCard">
+          <section class="chapterList-card">
+            <ion-col>
+              <ion-img [src]="item?.chapterImage" class="chapterImg"></ion-img>
+            </ion-col>
+            <ion-col>
+              <ion-text > {{item?.name}}</ion-text>
+            </ion-col>
+          </section>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-content>
