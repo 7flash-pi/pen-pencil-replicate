@@ -1,0 +1,38 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="silver-bg">
+    <app-back-button btnText={{courseItem?.name}} defaultHref="plans"></app-back-button>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+
+  <!--Revision notes for lmr -->
+  <ion-row class="ion-margin-top ion-margin-bottom" *ngIf=" courseItem?.name === 'Revision Notes for LMR' " >
+    <ion-col>
+      <ion-card *ngFor="let item of chapterList" class="chapterCard shadow-Card" (click)="gotoTopic(item)" >
+          <section class="chapterList-card">
+            <ion-col>
+              <ion-item lines="none">
+                <ion-img [src]="item?.chapterImage" class="chapterImg"></ion-img>
+                <ion-text class="ion-padding-start"> {{item?.name}}</ion-text>
+              </ion-item>
+            </ion-col>
+          </section>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+
+
+
+  <ion-row  *ngIf="courseItem?.name === 'Most Recent & Previous Years Papers'">
+    <ion-col>
+      <ion-card class="chapterCard shadow-Card">
+
+
+      </ion-card>
+    </ion-col>
+  </ion-row>
+
+
+</ion-content>

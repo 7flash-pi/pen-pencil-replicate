@@ -49,7 +49,6 @@ export class NotificationsPage implements OnInit{
         this.notificationList=res['data'].map( item => new NotificationModal(item));
       }
       this.totalCount = res['paginate'].totalCount;
-      console.log(this.totalCount);
       const data = [];
       this.notificationList.forEach((item) => {
           if (!item['isRead']) {

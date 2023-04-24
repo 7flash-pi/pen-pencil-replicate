@@ -6,6 +6,8 @@ import { register } from 'swiper/element/bundle';
 import { AuthService } from './provider/auth-Service/auth.service';
 import { StorageService } from './provider/stroage/storage.service';
 import { NavController,Platform } from '@ionic/angular';
+import { ORGANIZATION_ID } from './constant/global-contant-services';
+import { HomeLayoutService } from './provider/home-layout.service';
 
 register();//swiper register function
 
@@ -59,7 +61,8 @@ export class AppComponent implements OnInit, OnDestroy{
     private authService:AuthService,
     private storageService:StorageService,
     private navController:NavController,
-    private platform:Platform) {
+    private platform:Platform,
+    private homeLayout:HomeLayoutService) {
       this.doTokenExist();
     }
   ngOnDestroy(): void {
@@ -70,6 +73,7 @@ export class AppComponent implements OnInit, OnDestroy{
 
   ngOnInit(): void {
     this.getUserInfo();
+    this.getHomeLayout();
   }
 
   gotomypackage(){
@@ -128,5 +132,20 @@ export class AppComponent implements OnInit, OnDestroy{
     await this.navController.setDirection('root');
     await this.router.navigate(['login'])
 
+  }
+
+  async getHomeLayout(){
+    const orgId = ORGANIZATION_ID;
+    const query = {
+        type: `banner,videoGallery,testimonials`,
+        mode: 'nested'
+    };
+    try{
+      const res = await lastValueFrom( this.homeLayout.getHomeLayout(orgId,query));
+      this.globalService.setHomeData(res);
+    }
+    catch {
+
+    }
   }
 }

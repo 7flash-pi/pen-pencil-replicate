@@ -1,0 +1,30 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="silver-bg">
+    <app-back-button btnText="Daily Live test" btnIcon="arrow-back-outline" defaultHref="plans/nursing-olympiad"></app-back-button>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-row class="ion-margin">
+    <ion-col class="card-container">
+
+
+      <ion-card class="test-card align-center ion-padding" [ngClass]="subjectActiveCard ? 'active': 'Inactive'" (click)="openSubjectTestCard()">
+        <ion-img src="assets/new_assets/free_pack/test_cat_icon.png" class="ion-text-center"></ion-img>
+        <ion-text>Subject Wise Test</ion-text>
+      </ion-card>
+
+
+
+        <ion-card class="test-card align-center ion-padding" [ngClass]="grandCard ? 'active': 'Inactive'" (click)="openGrandTestCard()">
+          <ion-img src="assets/new_assets/free_pack/test_cat_icon.png" class="ion-text-center"></ion-img>
+          <ion-text>Grand Test</ion-text>
+        </ion-card>
+
+    </ion-col>
+
+    <ion-col>
+      <app-subject-test *ngIf="subjectActiveCard"></app-subject-test>
+      <app-grand-test *ngIf="grandCard"></app-grand-test>
+    </ion-col>
+  </ion-row>
+</ion-content>

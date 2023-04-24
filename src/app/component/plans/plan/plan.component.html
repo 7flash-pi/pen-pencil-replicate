@@ -1,0 +1,83 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <app-back-button btnIcon="arrow-back-outline" [btnText]="plan?.footer" defaultHref="home" ></app-back-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-row>
+    <ion-col>
+      <swiper-container [slidesPerView]="1" [loop]="true"   #slideWithNav [options]="slideOpt" [pager]="true" >
+        <swiper-slide class="content-slide" *ngFor="let banner of bannersList" class="slideInLeft">
+            <ion-img [src]="banner.image.url || 'assets/plans/qbc-banner.png'"  alt=""></ion-img>
+        </swiper-slide>
+      </swiper-container>
+    </ion-col>
+  </ion-row>
+  <section>
+    <ion-row>
+      <ion-col>
+        <ion-searchbar placeholder="Search" class="searchBar"></ion-searchbar>
+      </ion-col>
+    </ion-row>
+
+    <!-- <ion-card *ngFor="let course of courseList" (click)="goToContent($event,course)"> // component for this
+      <ion-row class="center">
+        <section class="imgSection align-center">
+          <ion-img src={{course.imageUrl}} class="cardImg"></ion-img>
+        </section>
+        <ion-col >
+          <ion-text>{{course.name}}</ion-text>
+          <p>{{course.desc}}</p>
+
+        </ion-col>
+      <section class="iconSection align-center">
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+      </section>
+      </ion-row>
+    </ion-card> -->
+
+    <app-pack-card *ngFor="let course of courseList"  (click)="goToContent($event,course)" [course]='course' ></app-pack-card>
+
+
+    <ion-row *ngIf="suggestedVideos.length > 0" class="ion-margin-vertical">
+
+      <ion-col class="ion-no-padding">
+        <ion-text class="video-title ion-margin-start">Recommended Videos</ion-text>
+      </ion-col>
+
+      <!-- <ion-row class="video-container">
+        <ion-col class="ion-margin-top" *ngFor="let singleSuggestedVideo of suggestedVideos" (click)="openYoutubePlayer(singleSuggestedVideo)">
+
+          <section (click)="openYoutube(singleSuggestedVideo)">
+            <ion-img  [src]="singleSuggestedVideo?.imageUrl" class="img-video"></ion-img>
+            <ion-img class="play-btn" src="assets/hybrid/dict/play.png"></ion-img>
+          </section>
+
+        </ion-col>
+      </ion-row> -->
+      <ion-row>
+        <ion-col class="video-center">
+          <app-videos-card *ngFor="let singleSuggestedVideo of suggestedVideos" (click)="openYoutubePlayer(singleSuggestedVideo)" [singleVideo]='singleSuggestedVideo'></app-videos-card>
+        </ion-col>
+      </ion-row>
+
+    </ion-row>
+
+    <ion-row>
+      <ion-col class="ion-no-padding">
+        <ion-text class="video-title ion-margin-start">Quick Links</ion-text>
+    </ion-col>
+    <ion-row>
+      <ion-col *ngFor="let link of quickLinks">
+        <ion-img src={{link?.img}}></ion-img>
+      </ion-col>
+    </ion-row>
+  </ion-row>
+  </section>
+
+
+
+</ion-content>
+

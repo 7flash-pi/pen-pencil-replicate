@@ -46,10 +46,12 @@
     </ion-card-content>
 
   </ion-card>
- <ion-infinite-scroll (ionInfinite)="loadMore($event)" [disabled]="notificationList['length'] >= totalCount">
+
+ <ion-infinite-scroll (ionInfinite)="loadMore($event)" [disabled]="notificationList.length >= totalCount">
     <ion-infinite-scroll-content
             [loadingSpinner]="'bubbles'"
             [loadingText]="'Please Wait...'">
     </ion-infinite-scroll-content>
 </ion-infinite-scroll>
+
 </ion-content>

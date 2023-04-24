@@ -1,6 +1,34 @@
+<section class="modal-content ion-text-center">
+
+  <ion-row>
+    <ion-col class="ion-text-center ion-padding">
+      <ion-title style =" --color:#D04043; font-size: 20px; font-weight: 600;" class="ion-margin-top">Terms & Conditons</ion-title>
+    </ion-col>
+  </ion-row>
+
+  <ion-row >
+    <ion-col style="flex: 1 !important; margin-top: 3em;">
+      <ion-checkbox labelPlacement="end" (ionChange)="handleChange($event)" aria-label="Terms and Condition"></ion-checkbox>
+    </ion-col>
+
+    <ion-col style="flex: 5 !important;">
+      <p class="ion-text-left" style="--color:#222; font-size: 15px; font-weight: 400;"> All rights are reserved. Any content uploaded in this app is under the copyright of Nursing Next Live. Sharing the content via any means will bring you to be treated as a violater of the Copyright act.
+        Any person involved directly or indrectly will be punishable and fined as per the copyright rules.
+      </p>
+    </ion-col>
+</ion-row>
 
 
-<div class=" modal-content ion-text-center">
+<ion-row class="ion-justify-content-center" style="margin-bottom: 3em;" >
+  <ion-button size="large" shape="round" [disabled]="!checked"  expand="block" (click)="close()" class="tandc-btn" size="6"> Next </ion-button>
+</ion-row>
+
+</section>
+
+
+
+
+<!-- <div class="modal-content ion-text-center">
   <ion-title style =" --color:#D04043; font-size: 20px; font-weight: 600;" class="ion-margin-top">Terms & Conditons</ion-title>
   <div class="content ion-padding">
     <ion-item lines="none" class="ion-margin-vertical">
@@ -12,20 +40,8 @@
     <ion-button shape="square" [disabled]="!checked" (click)="close()" class="tandc-btn" size="6"> Next </ion-button>
 
   </div>
-</div>
-
-
-
-<!--
-<div class="modal-content modal-wrapper">
-    <ion-title style =" --color:#D04043; font-size: 20px; font-weight: 600;" class="ion-margin-top">Terms & Conditons</ion-title>
-    <ion-item lines="none" class="ion-margin-vertical">
-    <ion-checkbox slot="start" (ionChange)="handleChange($event)"></ion-checkbox>
-    <ion-text class="termClabel" style="--color:#222; font-size: 15px; font-weight: 400;"> All rights are reserved. Any content uploaded in this app is under the copyright of Nursing Next Live. Sharing the content via any means will bring you to be treated as a violater of the Copyright act.
-      Any person involved directly or indrectly will be punishable
-      and fined as per the copyright rules.</ion-text>
-      </ion-item>
-
-    <ion-button shape="square" [disabled]="!checked" (click)="close()" class="tandc-btn" size="6"> Next </ion-button>
-
 </div> -->
+
+
+
+

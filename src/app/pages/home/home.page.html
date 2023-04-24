@@ -2,17 +2,94 @@
 <app-home-nav></app-home-nav>
 
 <ion-content>
-  <ion-text class="title">Hi {{ userInfo?.firstName || ''}}!</ion-text>
-  <app-content-slider></app-content-slider>
-  <app-home-content></app-home-content>
+  <section class="sectionContent">
+    <ion-row>
+      <ion-col>
+        <ion-text  class="ion-text-start title" >Hi {{ userInfo?.firstName || ''}}!</ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-margin-vertical">
+      <ion-col>
+        <app-content-slider></app-content-slider>
+      </ion-col>
+    </ion-row>
+
+  <section class="home-content">
+    <app-home-content></app-home-content>
+  </section>
+
       <ion-row>
         <ion-col>
           <ion-img src="assets/question-white.png" (click)="goToQOTD()" tappable></ion-img>
         </ion-col>
       </ion-row>
 
-  <section class="connectBar">
-    <ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-img src="assets/new_assets/new_book.png"  tappable></ion-img>
+        </ion-col>
+      </ion-row>
+
+     <ion-row>
+      <ion-col>
+        <p class="heading">Book store</p>
+      </ion-col>
+     </ion-row>
+
+      <ion-row >
+        <ion-col>
+          <ion-img src="assets/new_assets/book_store.png" tappable></ion-img>
+        </ion-col>
+      </ion-row>
+
+
+      <ion-row>
+        <ion-col>
+          <p class="heading">Our Proud Nextians</p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="ion-padding">
+        <ion-col>
+          <swiper-container [slidesPerView]="1" [loop]="true" [options]="slideOpt" scrollbar="true">
+            <swiper-slide class="content-slide" *ngFor="let slide of bannersB1">
+                <ion-img src={{slide?.image?.url}} alt=""></ion-img>
+            </swiper-slide>
+          </swiper-container>
+        </ion-col>
+      </ion-row>
+
+
+      <ion-row>
+        <ion-col>
+          <p class="heading">Recommended videos</p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <swiper-container [slidesPerView]="1" [loop]="true" [options]="slideOpt" >
+            <swiper-slide class="video-slide" *ngFor="let video of suggestedVideos" (click)="openVideo($event,video)">
+                <ion-img src={{video?.image}} alt=""></ion-img>
+            </swiper-slide>
+          </swiper-container>
+        </ion-col>
+      </ion-row>
+
+
+      <ion-row>
+        <ion-col>
+          <p class="heading">Rate Us </p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col (click) = "openPlayStore()">
+          <ion-img src="assets/new_assets/rate.png"></ion-img>
+        </ion-col>
+      </ion-row>
+
+    <!-- <ion-row>
 
       <ion-col>
         <ion-item lines="none">
@@ -38,43 +115,49 @@
         <ion-icon name="logo-youtube"></ion-icon>
       </ion-col>
       <ion-col class="align-center ion-margin-end">
-        <!-- <ion-img src="assets/new_what_icon.png"></ion-img> -->
+         <ion-img src="assets/new_what_icon.png"></ion-img>
 
       </ion-col>
 
-    </ion-row>
+    </ion-row> -->
   </section>
+
 
 </ion-content>
 
 
-<ion-footer class="ion-no-border">
+<ion-footer class="ion-no-border ion-padding-horizontal">
+
   <ion-toolbar>
-    <ion-row>
-      <ion-col class="footer-img ">
-        <ion-item lines="none" class="singleItem">
-          <ion-img  src="assets/new_assets/home_tabs/home_a.png">home</ion-img>
-          <p>Home</p>
-        </ion-item>
-      </ion-col>
-      <ion-col class="footer-img align-center">
-        <ion-img  src="assets/new_assets/home_tabs/home_a.png"></ion-img>
-        <p>Home</p>
-      </ion-col>
-      <ion-col class="footer-img align-center">
-        <ion-img  src="assets/new_assets/home_tabs/home_a.png"></ion-img>
-        <p>Home</p>
-      </ion-col>
-      <ion-col class="footer-img align-center">
-        <ion-img  src="assets/new_assets/home_tabs/home_a.png"></ion-img>
-        <p>Home</p>
-      </ion-col>
-      <ion-col class="footer-img align-center">
-        <ion-img  src="assets/new_assets/home_tabs/home_a.png"></ion-img>
-        <p>Home</p>
-      </ion-col>
-    </ion-row>
+
+    <ion-tabs>
+
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button >
+          <ion-img  class="footer-img" src="assets/new_assets/home_tabs/home_a.png"></ion-img>Home
+        </ion-tab-button>
+
+        <ion-tab-button >
+          <ion-img class="footer-img"  src="assets/new_assets/home_tabs/store.png"></ion-img>Buy Courses
+        </ion-tab-button>
+
+        <ion-tab-button >
+          <ion-img  class="footer-live" src="assets/cbs-nn/bottom_bar/live_session.svg"></ion-img>
+        </ion-tab-button>
+
+        <ion-tab-button>
+          <ion-img   class="footer-img" src="assets/new_assets/home_tabs/doubt.png"></ion-img>Ask us
+        </ion-tab-button>
+
+        <ion-tab-button>
+          <ion-img class="footer-img"  src="assets/new_assets/home_tabs/book.png"></ion-img>Buy Books
+        </ion-tab-button>
+
+      </ion-tab-bar>
+    </ion-tabs>
+
   </ion-toolbar>
+
 </ion-footer>
 
 

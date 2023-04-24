@@ -33,8 +33,9 @@ export class NotificationService extends BaseService{
       }
       url = url.substr(0, url.length - 1);
     }
-
+    console.log(url);
     return  this.httpClient.get(url).pipe(retry(1),tap());
+
   }
 
  getNotificationMetadata(campaignId:string){
