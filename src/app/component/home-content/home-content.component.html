@@ -1,14 +1,14 @@
-<ion-grid>
+
   <ion-row>
     <ion-col *ngFor="let data of cardData;" size="4">
       <ion-card class="ion-padding ion-no-border" (click)="goToPlan($event,data)">
         <p class="content-plan">{{data.plan}}</p>
-        <ion-img  src={{data.img}} class="content-img"></ion-img>
+        <ion-img  src= {{data.img}}  class="content-img"> </ion-img>
         <p class="content-footer"> {{data.footer}}</p>
       </ion-card>
       <p>{{data.text}}</p>
     </ion-col>
   </ion-row>
-</ion-grid>
+
 
 

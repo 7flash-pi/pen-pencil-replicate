@@ -1,7 +1,7 @@
 import * as moment from 'moment';
 
 export class NotificationModal {
-  createdAt: string;ß
+  createdAt: string;
   isRead: boolean;
   isSend: boolean;
   text: string;
@@ -804,5 +804,57 @@ export class TagModal {
       this.isActive = false;
   }
 
+}
+
+export class NewSuggestedVideoModal {
+  image: string;
+  name: string;
+  duration: string;
+  id: string;
+  cardType: string;
+  embedCode: string;
+  imageUrl: string;
+
+  constructor(suggestedVideo) {
+      //console.log(suggestedVideo);
+      this.id = (suggestedVideo && suggestedVideo._id) ? suggestedVideo._id : '';
+
+      this.duration = (suggestedVideo && suggestedVideo.duration) ? suggestedVideo.duration.toString() : '';
+      this.image = this.returnImage(suggestedVideo);
+      this.imageUrl = this.returnImage(suggestedVideo);
+      this.name = suggestedVideo.name || suggestedVideo.title || 'Default name';
+      this.embedCode = this.returnVideoUrl(suggestedVideo);
+      this.cardType = this.returnVideoType(this.embedCode);
+  }
+
+  returnImage(video) {
+      if (video && video.image) {
+          return video.image;
+      } else if (video && video.thumbnail_url) {
+          return video.thumbnail_url;
+      } else {
+          return 'assets/video_default.png';
+      }
+  }
+
+  returnVideoUrl(video) {
+      if (video && video.embedCode) {
+          return video.embedCode;
+      } else if (video && video.hls_url) {
+          return video.hls_url;
+      } else {
+          return '';
+      }
+  }
+
+  returnVideoType(url: string) {
+      if (url.includes('www.youtube.com')) {
+          return `youtube`;
+      } else if (url.includes('player.vimeo')) {
+          return `vimeo`;
+      } else {
+          return 'video';
+      }
+  }
 }
 

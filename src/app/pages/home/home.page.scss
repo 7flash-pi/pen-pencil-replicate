@@ -4,6 +4,11 @@ ion-content{
     width: 90%;
   }
 }
+.home-content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .title{
   font-size: 25px;
@@ -32,4 +37,26 @@ ion-footer{
 
 .footer-live{
   width: 75px;
+}
+.heading{
+  margin-top: 16px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.content-slide{
+  width: 80%;
+  padding: 10px;
+  object-fit: contain;
+  ion-img{
+    height: 200px;
+   object-fit: contain;
+  }
+}
+
+.video-slide{
+  ion-img{
+    border-radius: 1em;
+  }
+
 }

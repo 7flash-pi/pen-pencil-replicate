@@ -8,11 +8,84 @@
         <ion-text  class="ion-text-start title" >Hi {{ userInfo?.firstName || ''}}!</ion-text>
       </ion-col>
     </ion-row>
-  <app-content-slider></app-content-slider>
-  <app-home-content></app-home-content>
+    <ion-row class="ion-margin-vertical">
+      <ion-col>
+        <app-content-slider></app-content-slider>
+      </ion-col>
+    </ion-row>
+
+  <section class="home-content">
+    <app-home-content></app-home-content>
+  </section>
+
       <ion-row>
         <ion-col>
           <ion-img src="assets/question-white.png" (click)="goToQOTD()" tappable></ion-img>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-img src="assets/new_assets/new_book.png"  tappable></ion-img>
+        </ion-col>
+      </ion-row>
+
+     <ion-row>
+      <ion-col>
+        <p class="heading">Book store</p>
+      </ion-col>
+     </ion-row>
+
+      <ion-row >
+        <ion-col>
+          <ion-img src="assets/new_assets/book_store.png" tappable></ion-img>
+        </ion-col>
+      </ion-row>
+
+
+      <ion-row>
+        <ion-col>
+          <p class="heading">Our Proud Nextians</p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="ion-padding">
+        <ion-col>
+          <swiper-container [slidesPerView]="1" [loop]="true" [options]="slideOpt" scrollbar="true">
+            <swiper-slide class="content-slide" *ngFor="let slide of bannersB1">
+                <ion-img src={{slide?.image?.url}} alt=""></ion-img>
+            </swiper-slide>
+          </swiper-container>
+        </ion-col>
+      </ion-row>
+
+
+      <ion-row>
+        <ion-col>
+          <p class="heading">Recommended videos</p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <swiper-container [slidesPerView]="1" [loop]="true" [options]="slideOpt" >
+            <swiper-slide class="video-slide" *ngFor="let video of suggestedVideos" (click)="openVideo($event,video)">
+                <ion-img src={{video?.image}} alt=""></ion-img>
+            </swiper-slide>
+          </swiper-container>
+        </ion-col>
+      </ion-row>
+
+
+      <ion-row>
+        <ion-col>
+          <p class="heading">Rate Us </p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col (click) = "openPlayStore()">
+          <ion-img src="assets/new_assets/rate.png"></ion-img>
         </ion-col>
       </ion-row>
 
@@ -48,6 +121,7 @@
 
     </ion-row> -->
   </section>
+
 
 </ion-content>
 

@@ -11,6 +11,7 @@ import { HomePage } from './home.page';
 import { HomeContentComponent } from 'src/app/component/home-content/home-content.component';
 import { ContentSliderComponent } from 'src/app/component/content-slider/content-slider.component';
 import { HomeNavComponent } from 'src/app/component/home-nav/home-nav.component';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 
 @NgModule({
@@ -20,9 +21,10 @@ import { HomeNavComponent } from 'src/app/component/home-nav/home-nav.component'
     IonicModule,
     HomePageRoutingModule,
     ContentSliderComponent,
-    HomeNavComponent
+    HomeNavComponent,
   ],
   declarations: [HomePage,HomeContentComponent],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA]
 
 })
 export class HomePageModule {}

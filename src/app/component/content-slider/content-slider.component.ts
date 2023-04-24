@@ -5,22 +5,24 @@ import { LoginService } from 'src/app/provider/login/login.service';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { IonicModule } from '@ionic/angular';
+import { CommonModule } from '@angular/common';
+import { register } from 'swiper/element';
 
+register();
 @Component({
 
   standalone:true,
   selector: 'app-content-slider',
   templateUrl: './content-slider.component.html',
   styleUrls: ['./content-slider.component.scss'],
-  imports:[IonicModule],
+  imports:[IonicModule,CommonModule],
   schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
 export class ContentSliderComponent  implements OnInit {
 
   sliders:Array<BannerModal>=[];
-  bannerB1:Array<BannerModal>=[];
-  bannerB2: Array<BannerModal> = [];
-  bannerB3: Array<BannerModal> = [];
+  bannerB2:Array<BannerModal>=[];
+
   homeDataSubs:Subscription;
   @ViewChild('slideWithNav', {static:false}) slider;
 
@@ -64,10 +66,9 @@ async getSliders(res) {
       res['data']['banner']['banners'].forEach(item => {
           this.sliders.push(new BannerModal(item));
       });
-      this.bannerB1 = this.sliders.filter(item => item.title === 'B1');
       this.bannerB2 = this.sliders.filter(item => item.title === 'B2');
-      this.bannerB3 = this.sliders.filter(item => item.title === 'B3');
   }
+
 }
 async openFromSlider(item: BannerModal) {
 
