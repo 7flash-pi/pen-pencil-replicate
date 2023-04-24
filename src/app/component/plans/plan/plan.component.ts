@@ -81,7 +81,7 @@ export class PlanComponent  implements OnInit {
     },
     {
         imageUrl: 'assets/new_assets/free_pack/most_recent.png',
-        name: 'Most Recent & Previous Years’ Papers',
+        name: 'Most Recent & Previous Years Papers',
         url: 'plans/list-page',
         order: '03',
         type: 'prevPaper',

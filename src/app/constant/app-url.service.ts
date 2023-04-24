@@ -62,7 +62,11 @@ export class AppUrlService {
     return this.APP_URL_V1 + `web-preference/${orgId}`;
   }
 
+  //chapter and topics
   public GET_CHAPTER_LIST(programId, subjectId) {
     return this.APP_URL_V1 + `programs/${programId}/subjects/${subjectId}/chapters`;
-}
+  }
+  public GET_TOPICS(programId, subjectId, chapterId) {
+    return this.APP_URL_V1 + `programs/${programId}/subjects/${subjectId}/chapters/${chapterId}/topics`;
+  }
 }

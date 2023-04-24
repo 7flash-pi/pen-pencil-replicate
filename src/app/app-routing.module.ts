@@ -111,6 +111,10 @@ const routes: Routes = [
     // component:EnterOtpComponent  normal loading
     loadComponent: () => import('./component/video-player/video-player.component').then(mod => mod.VideoPlayerComponent) //lazy loading
   },
+  {
+    path:'plans/list-page/list-inside',
+    loadComponent: () => import('./component/test-categories/list-page/list-inside/list-inside.component').then ( mod => mod.ListInsideComponent)
+  }
 
 
 
