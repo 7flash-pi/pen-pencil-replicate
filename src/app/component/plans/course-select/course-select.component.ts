@@ -16,6 +16,7 @@ export class CourseSelectComponent  implements OnInit {
 
   ngOnInit() {
     this.plan=history.state['plan'];
+    console.log(this.plan);
   }
 
 }

@@ -1,3 +1,9 @@
+ion-header{
+  .bg{
+    padding:18px 0px !important;
+  }
+}
+
 ion-content{
   text-align: center;
   ion-row{
@@ -30,19 +36,42 @@ ion-content{
       border-radius: 15px;
       ion-img{
         flex: 1;
-        margin-left: 2em;
       }
 
       p{
-
-        margin-right: 2em;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        margin-left: 2em;
+        color: #545454;
+        font-size: 18px;
+        font-weight: bold;
       }
 
     }
+    .correctAns{
+      background: #DFF7D1;
+      display: flex;
+      flex-direction: column;
+      p {
+        color: #78B45D;
+        font-weight: 600;
+        font-size: 15px;
+      }
+    }
+
   }
 
 
+}
+.btn-submit{
+  --border-radius: 12px;
+}
+.border-line{
+  border-top: 2px solid #A3a3a3 ;
+}
+
+
+.solutionDesc{
+  font-size: 12px !important;
+  line-height: 1.5 !important;
+  padding: 3px;
+  word-break: break-all !important;
 }

@@ -858,3 +858,70 @@ export class NewSuggestedVideoModal {
   }
 }
 
+export class McqModel {
+  text: string;
+  type: string;
+  options: Array<McqOptionModel> = [];
+  imageUrl: string;
+  submitted: boolean;
+  id: string;
+  solutionDescription: Array<SolutionModel> = [];
+
+  constructor(props) {
+      this.id = props._id || '';
+      this.text = props.text || '';
+      this.type = props.type || '';
+      this.submitted = props.submitted || false;
+      if (props && props.imageId && props.imageId.key) {
+          this.imageUrl = props.imageId.baseUrl + props.imageId.key;
+      } else {
+          this.imageUrl = '';
+      }
+      if (props && props.options && props.options.length) {
+          props.options.forEach(option => {
+              this.options.push(new McqOptionModel(option));
+          });
+      }
+      if (props && props.solutionDescription && props.solutionDescription.length) {
+          props.solutionDescription.forEach(sol => {
+              this.solutionDescription.push(new SolutionModel(sol));
+          });
+      }
+  }
+}
+
+export class McqOptionModel {
+  text: string;
+  id: string;
+  isSolution: boolean;
+  imageUrl: string;
+  selected: boolean;
+  noOfUsers: number;
+
+  constructor(props) {
+      this.text = props.text || '';
+      this.id = props._id || '';
+      if (props && props.imageId && props.imageId.key) {
+          this.imageUrl = props.imageId.baseUrl + props.imageId.key;
+      } else {
+          this.imageUrl = '';
+      }
+      this.isSolution = props.isSolution;
+  }
+}
+
+export class SolutionModel {
+  id: string;
+  imageUrl: string;
+  text: string;
+
+  constructor(props) {
+      this.id = props._id || '';
+      if (props && props.imageId && props.imageId.key) {
+          this.imageUrl = props.imageId.baseUrl + props.imageId.key;
+      } else {
+          this.imageUrl = '';
+      }
+      this.text = props.text || '';
+  }
+}

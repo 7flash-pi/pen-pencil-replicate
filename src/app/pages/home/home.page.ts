@@ -23,8 +23,9 @@ export class HomePage implements OnInit,OnDestroy {
     initialSlide: 0,
     slidesPerView: 1,
     effect: 'slide',
-    speed: 1000,
-    autoplay: true,
+    autoplay:{
+      delay:3000,
+    },
     loop: true,
     updateOnWindowResize: true,
     roundLengths: true,
@@ -114,7 +115,7 @@ export class HomePage implements OnInit,OnDestroy {
           );
       });
     }
-    console.log(this.suggestedVideos);
+
   }
 
 

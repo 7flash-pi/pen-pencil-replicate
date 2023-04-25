@@ -69,4 +69,8 @@ export class AppUrlService {
   public GET_TOPICS(programId, subjectId, chapterId) {
     return this.APP_URL_V1 + `programs/${programId}/subjects/${subjectId}/chapters/${chapterId}/topics`;
   }
+
+  public GET_MCQS(){
+    return this.APP_URL_V1+`mcqs`;
+  }
 }
